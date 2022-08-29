@@ -21,6 +21,10 @@ This system will allow them to efficiently manage their proyects, schedule flow,
 
 * Submit Pull Request with comprehensive description of changes
 
+### Week 01 - Employee page of Trackgenix on Figma
+
+I worked with two mates in a team making the Employee part of the Trackgenix page on Figma, doing meetings everyday and working as e team at all times.
+
 ### Week 02 - HTML of Trackgenix Landing Page
 
 This week we have to create the html file of the landing page of Trakgenix taking into count the Figma pages that we 
