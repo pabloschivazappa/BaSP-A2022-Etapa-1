@@ -1,5 +1,6 @@
 body{
     background-color: white;
+    width: 100vw;
     font-family: roboto;
     font-size: 16px;
     line-height: 1.6;
@@ -8,17 +9,19 @@ body{
 header{
     position: fixed;
     text-align: center;
-    width: 100%;
+    width: 100vw;
     height: 91px;
     background-color: #373867;
     color: #46A07B;
     font-style: normal;
     font-weight: 700;
     font-size: 60px;
+    z-index: 1;
 }
 main{
     position: relative;
-    top: 91px;
+    width: 100vw;
+    top: 200px;
     left: 253px;
 }
 .rr-logo-head img{
@@ -26,12 +29,7 @@ main{
     width: 65px;
     left: 26px;
     top: 12px;
-}
-.hamburguer img{
-    position: fixed;
-    width: 65px;
-    right: 26px;
-    top: 12px;
+    z-index: 1;
 }
 .sidebar{
     position: fixed;
@@ -77,4 +75,176 @@ main{
     height: 75px;
     left: 95px;
     top: 609px;
+}
+#nav{
+    position: fixed;
+    width: 90vw;
+    height: 55px;
+    top: 91px;
+    left: 253px;
+    background-color: #373867;
+    z-index: 1;
+}
+#nav a{
+    position: relative;
+    float: left;
+    width: 210px;
+    font-family: roboto;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #479679;
+    text-decoration: none;
+}
+h2{
+    position: relative;
+    text-align: center;
+    width: 255px;
+    height: 58px;
+    left: 512px;
+    font-family: roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 49.3617px;
+    line-height: 58px;
+    color: #373867;
+    box-sizing: border-box;
+    background: rgba(170, 206, 155, 0.53);
+    border: 2px solid #00000070;
+    border-radius: 20px;
+}
+#home{
+    position: relative;
+    display:inline-block;
+    margin-top: 50px;
+    width: 40%;
+}
+#home p{
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 546px;
+    font-family: roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28.8453px;
+    line-height: 41px;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #373867;
+}
+#home img{
+    position: relative;
+    left: 550px;
+    top: 30px;
+    float: right;
+    width: 500px;
+    height: 272.52px;
+    border: 0.75px solid #000000;
+}
+h3{
+    position: relative;
+    margin-top: 120px;
+    margin-left: 50px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    color: #373867;
+}
+#features article{
+    display: inline-block;
+    margin-top: 30px;
+    width: 40%;
+    text-align: center;
+}
+#features img{
+    width: 232px;
+    height: 232px;
+    margin-top: 20px;
+    background: rgba(170, 206, 155, 0.3);
+    padding: 5px;
+    border-radius: 10px;
+}
+h4{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    color: #373867;
+}
+#why article{
+    display: inline-block;
+    margin-top: 30px;
+    width: 40%;
+    height: 220px; 
+}
+#why img{
+    height: 118px;
+    background: rgba(170, 206, 155, 0.3);
+}
+#why p{ 
+    width: 60%;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #373867;
+}
+.shouldUse{
+    display: inline-block;
+    width: 50%;
+}
+#form p{
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    color: #000000;
+}
+.myForm{
+    display: block;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.myForm input{
+    width: 40%;
+    height: 37px;
+    margin-top: 10px;
+}
+#choose select{
+    width: 81.5%;
+    height: 37px;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+#check{
+    margin-top: 30px;
+    margin-left: 30px;
+    display: inline-block;
+}
+#check input{
+    float: left;
+}
+#text p{
+    margin-top: 30px;
+    margin-left: 30px;
+    font-family: 'K2D';
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 21px;
+}
+#text textarea{
+    width: 81.5%;
+    height: 296px;
+    margin-left: 30px;
+
+}
+#submit input{
+    display: inline-block;
+    margin-left: 30px;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
 }
