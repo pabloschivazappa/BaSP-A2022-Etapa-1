@@ -24,6 +24,12 @@ main{
     top: 200px;
     left: 253px;
 }
+footer{
+    position: relative;
+    width: 100vw;
+    top: 200px;
+    left: 253px;
+}
 .rr-logo-head img{
     position: fixed;
     width: 65px;
@@ -78,7 +84,7 @@ main{
 }
 #nav{
     position: fixed;
-    width: 90vw;
+    width: 1259px;
     height: 55px;
     top: 91px;
     left: 253px;
@@ -210,7 +216,7 @@ h4{
     margin-top: 10px;
 }
 #choose select{
-    width: 81.5%;
+    width: 1205px;
     height: 37px;
     margin-top: 10px;
     margin-left: 30px;
@@ -232,7 +238,7 @@ h4{
     line-height: 21px;
 }
 #text textarea{
-    width: 81.5%;
+    width: 1205px;
     height: 296px;
     margin-left: 30px;
 
@@ -246,5 +252,178 @@ h4{
     text-decoration: none;
     font-size: 16px;
     background-color: #4CAF50;
+    color: white;
+}
+#mission img{
+    position: absolute;
+    width: 112px;
+    height: 115.45px;
+    margin-left: 1027px;
+}
+#mission h4{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+#makeTime{
+    width: 722px;
+    height: 52px;
+    left: 395px;
+    top: 161px;
+    margin-left: 275px;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 78px;
+    text-align: center;
+    color: #151515;
+}
+#ourMission{
+    width: 1126px;
+    height: 90px;
+    left: 50px;
+    top: 237px;
+    margin-top: 30px;
+    margin-left: 75px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #1C1C37;
+}
+#hear{
+    width: 1338px;
+    height: 20px;
+    left: 91px;
+    top: 446px;
+    margin-left: 50px;
+    margin-top: 30px;
+    font-style: italic;
+    font-weight: 100;
+    font-size: 17px;
+    line-height: 20px;
+}
+#satisfied{
+    height: 20px;
+    left: 1154px;
+    top: 465px;
+    margin-top: 5px;
+    margin-left: 1000px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+}
+#aboutUs{
+    position: relative;
+    display:inline-block;
+    margin-top: 50px;
+    width: 40%;
+}
+#aboutUs p{
+    position: absolute;
+    width: 750px;
+    margin-top: 50px;
+    margin-left: 50px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #373867;
+}
+#aboutUs img{
+    position: relative;
+    box-sizing: border-box;
+    width: 385px;
+    left: 600px;
+    margin-top: 50px;
+    float: right;
+    border: 0.5px solid #000000;
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
+}
+#products article{
+    display: inline-block;
+    place-content: center;
+    margin-top: 30px;
+    width: 40%;
+    height: 220px; 
+}
+#products h4{
+    font-size: 26px;
+    color: #000000;
+}
+#products img{
+    width: 406px;
+}
+#products p{
+    font-size: 14px;
+}
+#products ul li{
+    margin-left: 50px;
+    list-style: disc;
+    font-size: 14px;
+}
+#company article{
+    position: relative;
+    display:inline-block;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+#company img{
+    position: relative;
+    width: 477px;
+}
+#company h4{
+    font-size: 26px;
+    color: #000000;
+}
+#company p{
+    width: 520px;
+    font-size: 21px;
+}
+.companyDiv{
+    display: inline-block;
+    width: 50%;
+}
+#support article{
+    display: inline-block;
+    margin-top: 30px;
+    width: 40%;
+    text-align: center;
+}
+#support img{
+    width: 437px;
+    height: 288px;
+}
+#support p{
+    font-size: 23px;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 28px;
+    text-align: center;
+}
+#tutorials ol{
+    margin-top: 50px;
+}
+#tutorials ol li{
+    margin-left: 100px;
+    list-style-type: decimal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+}
+#tutorials input{
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 30px;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+    font-size: 16px;
+    background-color: #98220D;
     color: white;
 }
