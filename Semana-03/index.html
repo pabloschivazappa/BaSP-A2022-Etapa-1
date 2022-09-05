@@ -30,7 +30,7 @@
             <img src="assets/img/RR Logo.png" alt="Radium Rocket Logo">
             </div>
         </section>
-        <nav id="nav">
+        <nav class="nav">
             <ul>
                 <li><a href="">Features</a></li>
                 <li><a href="">Why Should You Use Trackgenix?</a></li>
@@ -41,7 +41,7 @@
             </ul>
         </nav>
         <main>
-            <section id="home">
+            <section class="home">
                 <h2>WELCOME</h2>
                 <p>
                      "TRACKGENIX" is a revolutionary system designed fot Gigatech Software Solutions SA. This System 
@@ -50,7 +50,7 @@
                 </p>
                 <img src="assets/img/Software-Libre1-e1536932876688.jpg" alt="Main image">
             </section>
-            <section id="features">
+            <section class="features">
                 <h3>Application Features</h3>
                 <article>
                     <h4>Hours Log</h4>
@@ -69,9 +69,10 @@
                     <img src="assets/img/multiple_roles.png" alt="Multiple Roles">
                 </article>
             </section>
-            <section id="why">
+            <section class="why">
                 <h3>Why you should use Trackgenix?</h3>
                 <article>
+                    <div class="backgroundShouldUse"></div>
                     <img src="assets/img/843002-200.png" alt="Why you should use Trackgenix?">
                     <div class="shouldUse">
                         <h4>Productivity Booster</h4>
@@ -81,6 +82,7 @@
                     </div>
                 </article>
                 <article>
+                    <div class="backgroundShouldUse"></div>
                     <img src="assets/img/3712152.png" alt="Work traceability">
                     <div class="shouldUse">
                         <h4>Work traceability</h4>
@@ -90,6 +92,7 @@
                     </div>
                 </article>
                 <article>
+                    <div class="backgroundShouldUse"></div>
                     <img src="assets/img/leadership and team management.png" alt="Leadership">
                     <div class="shouldUse">
                     <h4>Leadership and team managemant</h4>
@@ -101,6 +104,7 @@
                     </div>
                 </article>
                 <article>
+                    <div class="backgroundShouldUse"></div>
                     <img src="assets/img/2385968-200.png" alt="Decicion making">
                     <div class="shouldUse">
                         <h4>Decision making</h4>
@@ -110,13 +114,13 @@
                     </div>
                 </article>
             </section>
-            <section id="form">
+            <section class="form">
                 <h3>Inscription Form</h3>
                 <form class="myForm">
                     <input type="text" name="Name" placeholder="Name">
                     <input type="email" name="Email" placeholder="Email">
                 </form>
-                <form id="choose">
+                <form class="choose">
                     <select name="contact area">
                         <option selected disabled hidden>-- Choose Contact Area --</option>
                         <option value="Human resources">Human Resources</option>
@@ -124,50 +128,59 @@
                         <option value="Merchandising">Merchandising</option>
                     </select>
                 </form>
-                <form id="check">
-                    <input type="checkbox">
-                    <p>
-                        Email me a copy
-                    </p>
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                    <p>
-                        I am human and accept terms of service
-                    </p>
+                <form class="check">
+                    <div class="checkOne">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <p>
+                            Email me a copy
+                        </p>
+                    </div>
+                    <div class="checkTwo">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <p>
+                            I am human and accept terms of service
+                        </p>
+                    </div>
                 </form>
-                <form id="text">
+                <form class="text">
                     <p>
                         Text
                     </p>
                     <textarea name="message" placeholder="Enter your text here..."></textarea>
                 </form>
-                <form id="submit">
+                <form class="submit">
                     <input type="submit" name="submit" value="Submit">
                 </form>
             </section>
-            <section id="mission">
+            <section class="mission">
                 <h3>Company´s Mission</h3>
                 <img src="assets/img/RR Logo.png" alt="Radium Rocket Logo">
                 <h4>WHERE WE STARTED; WHERE WE ARE HEADED</h4>
-                <p id="makeTime">
+                <p class="makeTime">
                     Make time yout ally; make puntuality the difference
                 </p>
-                <p id="ourMission">
+                <p class="ourMission">
                     Our mission is to allow workers all over the world to reach their full potential.Our goal is to 
                     bring more power to start-ups through top-notch and user-friendly time-tracking web apps, easily 
                     accessible through any device.We believe in integrity, honesty, passion for our client’s ideas and 
                     communication.
                 </p>
                 <h4>HEAR WHAT THEY SAY ABOUT US</h4>
-                <p id="hear">
+                <p class="hear">
                     “TrackGenix allows us to effortlessly and easily track total workflow in each of our projects and
                      make a balanced distribution of team workload”
                 </p>
-                <p id="satisfied">
+                <p class="satisfied">
                     -Satisfied Costumer
                 </p>
             </section>
-            <section id="aboutUs">
+            <section class="aboutUs">
                 <h3>About Us</h3>
                 <p>
                     RadiumRocket developed TrackGenix as a software solution for optimal time-tracking and project 
@@ -180,7 +193,7 @@
                 </p>
                 <img src="assets/img/security-protection-anti-virus-software-60504.jpeg" alt="Security">
             </section>
-            <section id="products">
+            <section class="products">
                 <h3>Our Products</h3>
                 <article>
                     <img src="assets/img/Sistemas-de-control-de-acceso-cedab0aa.png" alt="Employee time control">
@@ -230,11 +243,11 @@
                     </ul>
                 </article>
             </section>
-            <section id="company">
+            <section class="company">
                 <h3>Company</h3>
                 <article>
                 <img src="assets/img/pexels-photo-233698.jpeg" alt="GSS SA building">
-                    <div class="companyDiv">
+                    <div class="companyText">
                         <h4>Gigatech Software Solutions SA building</h4>
                         <p>
                             Trackgenix is a HR software company that streamlines human resource management for clients in 
@@ -242,9 +255,9 @@
                         </p>
                     </div>
                 </article>
-                <article>
+                <article class="companySecondArticle">
                     <img src="assets/img/matricula-cero-2048x1463.jpg" alt="Inclusive workplace">
-                    <div class="companyDiv">
+                    <div class="companyText">
                         <h4>An inclusive workplace for everyone</h4>
                         <p>
                             Get to know our team and our offices and join us in our leap towards better human resources 
@@ -255,7 +268,7 @@
                 </article>
                 <article>
                     <img src="assets/img/pexels-photo-269077.jpeg" alt="Our workplace, our world">
-                    <div class="companyDiv">
+                    <div class="companyText">
                         <h4>Our workplace, our world</h4>
                         <p>
                             Trackgenix was created remotely in 2008 by Yves Hiernaux and Mic Cvilic after many years of 
@@ -266,7 +279,7 @@
                     </div>
                 </article>
             </section>
-            <section id="support">
+            <section class="support">
                 <h3>Support</h3>
                 <article>
                     <img src="assets/img/pexels-hitesh-choudhary-340152-2048x1152.jpg" alt="Phone call">
@@ -281,7 +294,7 @@
                     </p>
                 </article>
             </section>
-            <section id="tutorials">
+            <section class="tutorials">
                 <h3>Tutorials</h3>
                 <ol>
                     <li>"TrackGenix: Quick Start Guide" 05:10</li>
@@ -298,12 +311,12 @@
             </section>
         </main>
         <footer>
-            <form>
-                <a href="https://www.facebook.com/" target="_blank"><img src="assets/img/facebook.png"></a>
-                <a href="https://twitter.com/" target="_blank"><img src="assets/img/twitter.png"></a>
-                <a href="https://www.instagram.com/" target="_blank"><img src="assets/img/instagram.png"></a>
-                <a href="https://www.linkedin.com/" target="_blank"><img src="assets/img/linkedin.png"></a>
-            </form>
+            <ul>
+                <li><a href="https://www.facebook.com/" target="_blank"><img src="assets/img/facebook.png"></a></li>
+                <li><a href="https://twitter.com/" target="_blank"><img src="assets/img/twitter.png"></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><img src="assets/img/instagram.png"></a></li>
+                <li><a href="https://www.linkedin.com/" target="_blank"><img src="assets/img/linkedin.png"></a></li>
+            </ul>
             <p>
                 Rosario, Argentina
             </p>

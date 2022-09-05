@@ -1,7 +1,7 @@
 body{
     background-color: white;
     width: 100vw;
-    font-family: roboto;
+    font-family: 'roboto';
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
@@ -23,18 +23,27 @@ main{
     width: 1259px;
     top: 200px;
     left: 253px;
+    overflow-x: hidden;
 }
 footer{
     position: relative;
+    text-align: center;
     width: 1259px;
-    top: 200px;
-    left: 253px;
-    margin-top: 100px;
-}
-footer form{
-    align-items: center;
+    height: 74px;
+    top: 300px;
+    margin-left: 253px;
     background: #373867;
-    margin-bottom: 100px;
+}
+footer ul{
+    display: inline-block;
+    position: relative;
+    top: 12px;
+    margin-bottom: 80px;
+}
+footer ul li{
+    align-items: center;
+    float: left;
+    width: 120px;
 }
 footer p{
     text-align: center;
@@ -95,20 +104,21 @@ footer p{
     left: 95px;
     top: 609px;
 }
-#nav{
+.nav{
     position: fixed;
     width: 1259px;
     height: 55px;
     top: 91px;
     left: 253px;
+    box-sizing: border-box;
     background-color: #373867;
     z-index: 1;
 }
-#nav a{
+.nav a{
     position: relative;
     float: left;
-    width: 210px;
-    font-family: roboto;
+    width: 208px;
+    box-sizing: border-box;
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
@@ -122,8 +132,6 @@ h2{
     width: 255px;
     height: 58px;
     left: 512px;
-    font-family: roboto;
-    font-style: normal;
     font-weight: 400;
     font-size: 49.3617px;
     line-height: 58px;
@@ -133,18 +141,17 @@ h2{
     border: 2px solid #00000070;
     border-radius: 20px;
 }
-#home{
+.home{
     position: relative;
     display:inline-block;
     margin-top: 50px;
     width: 50%;
 }
-#home p{
+.home p{
     position: absolute;
     left: 100px;
     top: 100px;
     width: 546px;
-    font-family: roboto;
     font-style: normal;
     font-weight: 400;
     font-size: 28.8453px;
@@ -153,7 +160,7 @@ h2{
     letter-spacing: 0.02em;
     color: #373867;
 }
-#home img{
+.home img{
     position: relative;
     left: 550px;
     top: 30px;
@@ -171,14 +178,14 @@ h3{
     line-height: 47px;
     color: #373867;
 }
-#features article{
+.features article{
     display: inline-block;
     margin-top: 30px;
     margin-left: 80px;
     width: 40%;
     text-align: center;
 }
-#features img{
+.features img{
     width: 232px;
     height: 232px;
     margin-top: 20px;
@@ -192,23 +199,35 @@ h4{
     line-height: 35px;
     color: #373867;
 }
-#why article{
+.why article{
     display: inline-block;
     margin-top: 50px;
     margin-left: 80px;
     width: 40%;
 }
-#why img{
-    height: 118px;
+.why img{
+    position: relative;
+    height: 95px;
+    margin-top: 40px;
+    margin-left: 20px;
+    z-index: 1;
+}
+.backgroundShouldUse{
+    position: absolute;
+    transform: rotate(45deg);
+    width: 131.25px;
+    height: 125px;
     background: rgba(170, 206, 155, 0.3);
     margin-top: 30px;
 }
-#why h4{
+.why h4{
     width: 110%;
+    margin-left: 60px;
 }
-#why p{ 
+.why p{ 
     width: 350px;
     margin-top: 30px;
+    margin-left: 60px;
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
@@ -219,7 +238,7 @@ h4{
     width: 50%;
     vertical-align: top;
 }
-#form p{
+.form p{
     font-weight: 500;
     font-size: 13px;
     line-height: 15px;
@@ -235,21 +254,81 @@ h4{
     height: 37px;
     margin-top: 10px;
 }
-#choose select{
-    width: 1205px;
+.choose select{
+    width: 1200px;
     height: 37px;
     margin-top: 10px;
     margin-left: 30px;
 }
-#check{
+.check{
     margin-top: 30px;
     margin-left: 30px;
     display: inline-block;
 }
-#check input{
+.check input{
     float: left;
 }
-#text p{
+.check p{
+    margin-top: 10px;
+    margin-left: 80px;
+}
+.checkOne{
+    position: absolute;
+}
+.checkTwo{
+    margin-left: 600px;
+}
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: #2196F3;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+.text p{
     margin-top: 30px;
     margin-left: 30px;
     font-family: 'K2D';
@@ -257,14 +336,15 @@ h4{
     font-size: 16px;
     line-height: 21px;
 }
-#text textarea{
-    width: 1205px;
+.text textarea{
+    width: 1190px;
     height: 296px;
     margin-left: 30px;
 
 }
-#submit input{
+.submit input{
     display: inline-block;
+    margin-top: 10px;
     margin-left: 30px;
     border: none;
     padding: 15px 32px;
@@ -274,17 +354,17 @@ h4{
     background-color: #4CAF50;
     color: white;
 }
-#mission img{
+.mission img{
     position: absolute;
     width: 112px;
     height: 115.45px;
     margin-left: 1027px;
 }
-#mission h4{
+.mission h4{
     margin-top: 50px;
     margin-left: 50px;
 }
-#makeTime{
+.makeTime{
     width: 722px;
     height: 52px;
     left: 395px;
@@ -297,7 +377,7 @@ h4{
     text-align: center;
     color: #151515;
 }
-#ourMission{
+.ourMission{
     width: 1126px;
     height: 90px;
     left: 50px;
@@ -312,7 +392,7 @@ h4{
     text-align: center;
     color: #1C1C37;
 }
-#hear{
+.hear{
     width: 1338px;
     height: 20px;
     left: 91px;
@@ -324,7 +404,7 @@ h4{
     font-size: 17px;
     line-height: 20px;
 }
-#satisfied{
+.satisfied{
     height: 20px;
     left: 1154px;
     top: 465px;
@@ -335,13 +415,13 @@ h4{
     font-size: 17px;
     line-height: 20px;
 }
-#aboutUs{
+.aboutUs{
     position: relative;
     display:inline-block;
     margin-top: 50px;
     width: 40%;
 }
-#aboutUs p{
+.aboutUs p{
     position: absolute;
     width: 700px;
     margin-top: 50px;
@@ -351,7 +431,7 @@ h4{
     line-height: 30px;
     color: #373867;
 }
-#aboutUs img{
+.aboutUs img{
     position: relative;
     box-sizing: border-box;
     width: 385px;
@@ -362,54 +442,61 @@ h4{
     box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.25);
     filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
 }
-#products article{
+.products article{
     display: inline-block;
     place-content: center;
     margin-top: 30px;
     margin-left: 100px;
     width: 40%;
-    height: 220px; 
+    height: 220px;
 }
-#products h4{
+.products h4{
     font-size: 26px;
     color: #000000;
 }
-#products img{
+.products img{
     width: 406px;
 }
-#products p{
+.products p{
     font-size: 14px;
 }
-#products ul li{
+.products ul li{
     margin-left: 50px;
     list-style: disc;
     font-size: 14px;
 }
-#company article{
+.company article{
     position: relative;
     display:inline-block;
     margin-top: 50px;
     margin-left: 100px;
 }
-#company img{
+.company img{
     position: relative;
     width: 477px;
 }
-#company h4{
+.company h4{
     font-size: 26px;
     color: #000000;
 }
-#company p{
+.company p{
     width: 520px;
     font-size: 21px;
 }
-.companyDiv{
+.companyText{
     display: inline-block;
     width: 50%;
     vertical-align: top;
     margin-left: 30px;
 }
-#support article{
+.companySecondArticle{
+    margin-bottom: 100px;
+}
+.companySecondArticle img{
+    position: absolute;
+    margin-left: 600px;
+}
+.support article{
     display: inline-block;
     margin-top: 30px;
     margin-left: 80px;
@@ -422,21 +509,21 @@ h4{
     line-height: 28px;
     text-align: center;
 }
-#support img{
+.support img{
     width: 437px;
     height: 288px;
 }
-#tutorials ol{
+.tutorials ol{
     margin-top: 50px;
 }
-#tutorials ol li{
+.tutorials ol li{
     margin-left: 100px;
     list-style-type: decimal;
     font-weight: 700;
     font-size: 26px;
     line-height: 31px;
 }
-#tutorials input{
+.tutorials input{
     display: inline-block;
     margin-top: 30px;
     margin-left: 450px;
