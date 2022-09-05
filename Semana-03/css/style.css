@@ -9,7 +9,7 @@ body{
 header{
     position: fixed;
     text-align: center;
-    width: 100vw;
+    width: 1512px;
     height: 91px;
     background-color: #373867;
     color: #46A07B;
@@ -20,15 +20,28 @@ header{
 }
 main{
     position: relative;
-    width: 100vw;
+    width: 1259px;
     top: 200px;
     left: 253px;
 }
 footer{
     position: relative;
-    width: 100vw;
+    width: 1259px;
     top: 200px;
     left: 253px;
+    margin-top: 100px;
+}
+footer form{
+    align-items: center;
+    background: #373867;
+    margin-bottom: 100px;
+}
+footer p{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
 }
 .rr-logo-head img{
     position: fixed;
@@ -124,7 +137,7 @@ h2{
     position: relative;
     display:inline-block;
     margin-top: 50px;
-    width: 40%;
+    width: 50%;
 }
 #home p{
     position: absolute;
@@ -161,6 +174,7 @@ h3{
 #features article{
     display: inline-block;
     margin-top: 30px;
+    margin-left: 80px;
     width: 40%;
     text-align: center;
 }
@@ -180,16 +194,21 @@ h4{
 }
 #why article{
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-left: 80px;
     width: 40%;
-    height: 220px; 
 }
 #why img{
     height: 118px;
     background: rgba(170, 206, 155, 0.3);
+    margin-top: 30px;
+}
+#why h4{
+    width: 110%;
 }
 #why p{ 
-    width: 60%;
+    width: 350px;
+    margin-top: 30px;
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
@@ -198,6 +217,7 @@ h4{
 .shouldUse{
     display: inline-block;
     width: 50%;
+    vertical-align: top;
 }
 #form p{
     font-weight: 500;
@@ -211,7 +231,7 @@ h4{
     margin-left: 30px;
 }
 .myForm input{
-    width: 40%;
+    width: 590px;
     height: 37px;
     margin-top: 10px;
 }
@@ -323,7 +343,7 @@ h4{
 }
 #aboutUs p{
     position: absolute;
-    width: 750px;
+    width: 700px;
     margin-top: 50px;
     margin-left: 50px;
     font-weight: 400;
@@ -335,7 +355,7 @@ h4{
     position: relative;
     box-sizing: border-box;
     width: 385px;
-    left: 600px;
+    left: 700px;
     margin-top: 50px;
     float: right;
     border: 0.5px solid #000000;
@@ -346,6 +366,7 @@ h4{
     display: inline-block;
     place-content: center;
     margin-top: 30px;
+    margin-left: 100px;
     width: 40%;
     height: 220px; 
 }
@@ -368,7 +389,7 @@ h4{
     position: relative;
     display:inline-block;
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: 100px;
 }
 #company img{
     position: relative;
@@ -385,23 +406,25 @@ h4{
 .companyDiv{
     display: inline-block;
     width: 50%;
+    vertical-align: top;
+    margin-left: 30px;
 }
 #support article{
     display: inline-block;
     margin-top: 30px;
+    margin-left: 80px;
     width: 40%;
     text-align: center;
-}
-#support img{
-    width: 437px;
-    height: 288px;
-}
-#support p{
+    vertical-align: top;
     font-size: 23px;
     font-weight: 500;
     font-size: 23px;
     line-height: 28px;
     text-align: center;
+}
+#support img{
+    width: 437px;
+    height: 288px;
 }
 #tutorials ol{
     margin-top: 50px;
@@ -416,7 +439,7 @@ h4{
 #tutorials input{
     display: inline-block;
     margin-top: 30px;
-    margin-left: 30px;
+    margin-left: 450px;
     border: none;
     padding: 15px 32px;
     text-align: center;
@@ -426,4 +449,6 @@ h4{
     font-size: 16px;
     background-color: #98220D;
     color: white;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
