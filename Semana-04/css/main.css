@@ -1,0 +1,100 @@
+main{
+    font-size: 1.2rem;
+}
+h2{
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    width: 250px;
+    font-size: 3rem;
+    color: #373867;
+    box-sizing: border-box;
+    background: rgba(170, 206, 155, 0.53);
+    border: 2px solid #00000070;
+    border-radius: 20px;
+}
+h3{
+    font-size: 1,2rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 30px;
+}
+h4{
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    justify-content: space-around;
+}
+.home img{
+    width:255px;
+
+}
+.home p{
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.featuresColumns{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.featuresFirstColumn h4{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.featuresSecondColumn h4{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.features img{
+    width: 100px;
+    background-color: rgba(170, 206, 155, 0.3);
+    border-radius: 10px;
+    padding: 5px;
+}
+.why {
+
+}
+.why img{
+    width: 70%;
+    transform: rotate(315deg);
+    padding: 20px;
+
+}
+.backgroundShouldUse{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg);
+    width: 90px;
+    height: 90px;
+    background: rgba(170, 206, 155, 0.3);
+    margin-top: 30px;
+
+}
+
+/* FORM */
+
+.mission img{
+    width: 98px;
+}
+
+.aboutUs  img{
+    width: 298px;
+}
+.products img{
+    width: 333px;
+}
+.company img{
+    width: 230px;
+}
+.support img{
+    width: 295px;
+}

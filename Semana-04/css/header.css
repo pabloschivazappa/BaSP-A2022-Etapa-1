@@ -1,0 +1,14 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 91px;
+    background-color: #373867;
+    color: #46A07B;
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 1;
+}
+.rr-logo-head img {
+    width: 59px;
+}

@@ -1,0 +1,13 @@
+footer ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 74px;
+    background: #373867;
+}
+footer p{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
