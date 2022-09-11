@@ -221,7 +221,7 @@ h4{
 }
 .aboutUs h3{
     margin: 0;
-    margin-top: 30px;
+    margin-top: 60px;
     margin-left: 10px;
     text-align: justify;
 }
@@ -422,5 +422,45 @@ h4{
     }
     .companySecondArticle img{
         order: 1;
+    }
+}
+
+@media (min-width: 1200px) {
+    .homeContainer{
+        display: flex;
+        width: 90%;
+    }
+    .homeContainer img{
+        order: 1;
+    }
+    .whyContainer{
+        flex-wrap: wrap;
+        width: 50%;
+        height: 300px;
+    }
+    .whyWork{
+        order: 1;
+    }
+    .aboutUsContainer{
+        flex-direction: row;
+        align-items: flex-start;
+        height: 250px;
+        margin-top: 20px;
+    }
+    .aboutUsContainer img{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .productsContainer{
+        flex-wrap: wrap;
+        width: 50%;
+        height: 900px;
+    }
+    .companyContainer{
+        height: 550px;
+    }
+    .supportContainer{
+        flex-direction: row;
+        height: 300px;
     }
 }
