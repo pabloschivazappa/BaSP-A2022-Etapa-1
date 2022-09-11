@@ -2,6 +2,8 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
     height: 91px;
     background-color: #373867;
     color: #46A07B;

@@ -1,4 +1,6 @@
 main{
+    position: relative;
+    top: 91px;
     font-size: 1.2rem;
 }
 h2{
@@ -152,10 +154,6 @@ h4{
     width: 80%;
     height: 296px;
 }
-
-
-
-
 .submit input{
     margin-top: 20px;
     border: none;
@@ -173,14 +171,15 @@ h4{
 .missionHeader h3{
     margin: 0;
     margin-top: 30px;
+    margin-left: 10px;
 }
 .mission h4{
     font-size: 1.4rem;
     width: 70%;
-    margin-left: 10px;
 }
 .mission img{
     width: 98px;
+    margin-right: 10px;
 }
 .makeTime{
     margin-top: 20px;
@@ -199,11 +198,15 @@ h4{
 }
 .hearHeader h4{
     margin-top: 20px;
+    left: 10px;
     text-align: center;
     width: 100%;
 }
 .hear{
     margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     text-align: center;
     font-size: 1rem;
     font-style: italic;
@@ -211,6 +214,7 @@ h4{
 }
 .satisfied{
     margin-top: 5px;
+    margin-left: 10px;
     font-size: 1rem;
     font-style: italic;
     font-weight: 600;
@@ -228,12 +232,12 @@ h4{
     justify-content: space-around;
     width: 100%;
     height: 600px;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 .aboutUs p{
     font-size: 0.95rem;
     line-height: 26px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 .aboutUs  img{
     width: 298px;
@@ -311,8 +315,6 @@ h4{
 .companySecondArticle{
     align-items: flex-end;
     margin-right: 10px;
-}
-.companySecondArticle p{
     text-align: right;
 }
 .support h3{
@@ -345,21 +347,37 @@ h4{
     padding-left: 50px;
     padding-right: 50px;
 }
+.tutorials h3{
+    margin: 0;
+    margin-top: 60px;
+    margin-left: 20px;
+    text-align: justify;
+}
 .tutorialsContainer{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 100%;
     height: 350px;
-    margin-top: 30px;
+}
+.tutorialsContainer ol{
+    list-style: decimal;
 }
 .tutorialsContainer li{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
     font-style: italic;
     font-weight: 700;
 }
 .tutorials form{
     display: flex;
     justify-content: center;
+}
+.time{
+    color: #1D22EC;
+    text-align: right;
 }
 .tutorials input{
     border: none;
@@ -373,4 +391,36 @@ h4{
     color: white;
     box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+}
+
+@media (min-width: 768px){
+    main{
+        width: 70%;
+        top: 147px;
+        margin-left: 30%;
+    }
+    .myForm{
+        flex-direction: row;
+        justify-content: space-between;
+        height: 40px;
+        width: 80%;
+    }
+    .myForm input{
+        width: 47%;
+    }
+    .companyContainer{
+        height: 600px;
+    }
+    .companyContainer article{
+        flex-direction: row;
+        align-items: flex-start
+    }
+    .companyText{
+        flex-direction: column;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .companySecondArticle img{
+        order: 1;
+    }
 }
