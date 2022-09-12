@@ -457,6 +457,11 @@ h4{
 }
 
 @media (min-width: 1200px) {
+    main{
+        width: 80%;
+        top: 147px;
+        margin-left: 20%;
+    }
     .homeContainer{
         flex-direction: row;
         width: 90%;

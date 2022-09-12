@@ -46,3 +46,9 @@
       display: flex;
     }
 }
+
+@media (min-width: 1200px){
+    .sidebar{
+        width: 20%;
+    }
+}

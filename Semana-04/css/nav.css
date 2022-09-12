@@ -30,6 +30,12 @@ nav{
 
 @media (min-width: 768px){
     nav{
-      display: flex;
+        display: flex;
+    }
+}
+@media (min-width: 1200px){
+    .nav{
+        width: 80%;
+        margin-left: 20%;
     }
 }
