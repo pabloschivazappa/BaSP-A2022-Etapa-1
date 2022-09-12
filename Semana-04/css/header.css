@@ -14,3 +14,9 @@ header{
 .rr-logo-head img {
     width: 59px;
 }
+
+@media (min-width: 768px){
+    .hamburguer-menu{
+        visibility: hidden;
+    }
+}

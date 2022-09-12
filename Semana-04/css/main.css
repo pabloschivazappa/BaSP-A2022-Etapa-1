@@ -28,19 +28,27 @@ h4{
 .home{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 400px;
-    justify-content: space-around;
+}
+.homeContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .home img{
     width:255px;
-
 }
 .home p{
     text-align: center;
+    margin-top: 30px;
     margin-left: 20px;
     margin-right: 20px;
+}
+.homeContainer p{
+    font-size: 1rem;
 }
 .featuresColumns{
     display: flex;
@@ -154,7 +162,7 @@ h4{
     width: 80%;
     height: 296px;
 }
-.submit input{
+.submit button{
     margin-top: 20px;
     border: none;
     padding: 10px 20px;
@@ -231,7 +239,7 @@ h4{
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    height: 600px;
+    height: 550px;
 }
 .aboutUs p{
     font-size: 0.95rem;
@@ -278,9 +286,15 @@ h4{
 }
 .productsContainer li{
     font-size: 0.7rem;
+    list-style: disc;
 }
 .products img{
     width: 333px;
+}
+.company{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .company h3{
     margin: 0;
@@ -293,7 +307,7 @@ h4{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 100%;
+    width: 90%;
     height: 800px;
 }
 .companyContainer img{
@@ -338,6 +352,7 @@ h4{
 }
 .supportContainer img{
     width: 295px;
+    height: 200px;
 }
 .supportContainer p{
     margin-top: 20px;
@@ -353,23 +368,30 @@ h4{
     margin-left: 20px;
     text-align: justify;
 }
+.tutorials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .tutorialsContainer{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 100%;
+    width: 90%;
     height: 350px;
 }
 .tutorialsContainer ol{
     list-style: decimal;
 }
 .tutorialsContainer li{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 10px;
+    margin-left: 30px;
     margin-right: 10px;
     font-style: italic;
     font-weight: 700;
+}
+.tutorialsLiDiv{
+    display: flex;
+    justify-content: space-between;
 }
 .tutorials form{
     display: flex;
@@ -379,7 +401,7 @@ h4{
     color: #1D22EC;
     text-align: right;
 }
-.tutorials input{
+.tutorials button{
     border: none;
     padding: 15px 32px;
     text-align: center;
@@ -388,9 +410,12 @@ h4{
     line-height: 31px;
     font-size: 16px;
     background-color: #98220D;
-    color: white;
     box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+}
+.tutorials button a{
+    text-decoration: none;
+    color: white;
 }
 
 @media (min-width: 768px){
@@ -398,6 +423,9 @@ h4{
         width: 70%;
         top: 147px;
         margin-left: 30%;
+    }
+    .homeContainer img{
+        width: 350px;
     }
     .myForm{
         flex-direction: row;
@@ -407,6 +435,9 @@ h4{
     }
     .myForm input{
         width: 47%;
+    }
+    .aboutUsContainer{
+        height: 500px;
     }
     .companyContainer{
         height: 600px;
@@ -427,11 +458,23 @@ h4{
 
 @media (min-width: 1200px) {
     .homeContainer{
-        display: flex;
+        flex-direction: row;
         width: 90%;
+    }
+    .home p{
+        margin-top: 0;
+    }
+    .homeContainer p{
+        font-size: 1.2rem;
     }
     .homeContainer img{
         order: 1;
+    }
+    .features{
+        height: 500px;
+    }
+    .features img{
+        width: 150px;
     }
     .whyContainer{
         flex-wrap: wrap;
@@ -440,6 +483,9 @@ h4{
     }
     .whyWork{
         order: 1;
+    }
+    .shouldUse{
+        font-size: 0.9rem;
     }
     .aboutUsContainer{
         flex-direction: row;
@@ -459,8 +505,24 @@ h4{
     .companyContainer{
         height: 550px;
     }
+    .companyContainer h4{
+        font-size: 1rem;
+    }
+    .companyContainer p{
+        font-size: 0.9rem;
+    }
+    .productsContainer p{
+        font-size: 0.9rem;
+    }
+    .productsContainer li{
+        font-size: 0.9rem;
+    }
+    .productsSecondBox{
+        order: 1;
+    }
     .supportContainer{
         flex-direction: row;
+        width: 90%;
         height: 300px;
     }
 }
