@@ -44,11 +44,6 @@
 @media (min-width: 768px){
     .sidebar{
       display: flex;
-    }
-}
-
-@media (min-width: 1200px){
-    .sidebar{
-        width: 20%;
+      max-width: 320px
     }
 }

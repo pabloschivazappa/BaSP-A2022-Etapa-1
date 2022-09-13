@@ -420,9 +420,8 @@ h4{
 
 @media (min-width: 768px){
     main{
-        width: 70%;
         top: 147px;
-        margin-left: 30%;
+        margin-left: min(30%, 320px);
     }
     .homeContainer img{
         width: 350px;
@@ -457,11 +456,6 @@ h4{
 }
 
 @media (min-width: 1200px) {
-    main{
-        width: 80%;
-        top: 147px;
-        margin-left: 20%;
-    }
     .homeContainer{
         flex-direction: row;
         width: 90%;
@@ -508,10 +502,13 @@ h4{
         height: 900px;
     }
     .companyContainer{
-        height: 550px;
+        height: 800px;
     }
     .companyContainer h4{
         font-size: 1rem;
+    }
+    .companyContainer img{
+        width: 350px;
     }
     .companyContainer p{
         font-size: 0.9rem;

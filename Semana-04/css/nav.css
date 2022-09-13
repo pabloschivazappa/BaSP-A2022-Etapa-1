@@ -3,11 +3,10 @@ nav{
 }
 .nav{
     position: fixed;
-    width: 70%;
     height: 56px;
-    margin-left: 30%;
+    width: max(70%, (100% - 320px) );
     top: 91px;
-    box-sizing: border-box;
+    margin-left: min(30%, 320px);
     background-color: #373867;
     z-index: 1;
 }
@@ -20,9 +19,7 @@ nav{
 .nav a{
     position: relative;
     width: 208px;
-    font-weight: 400;
     font-size: 0.9rem;
-    line-height: 23px;
     text-align: center;
     color: #479679;
     text-decoration: none;
@@ -31,11 +28,5 @@ nav{
 @media (min-width: 768px){
     nav{
         display: flex;
-    }
-}
-@media (min-width: 1200px){
-    .nav{
-        width: 80%;
-        margin-left: 20%;
     }
 }
