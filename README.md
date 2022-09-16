@@ -42,3 +42,9 @@ This week we have to add style in CSS for the html file of Trakgenix landing pag
 We have to make the landing page responsive using Flexbox with mobile first method, using media query (min-width), 768px for tablet and 1200px for desktop.
 
 Github repository: https://pabloschivazappa.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html
+
+### Week 05 - Javascript
+
+This week we start with Javascript. We have to do some exercises brught in class.
+
+Github repository: https://pabloschivazappa.github.io/BaSP-A2022-Etapa-1/Semana-05/index.html
