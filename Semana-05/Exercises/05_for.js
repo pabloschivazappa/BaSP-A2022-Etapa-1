@@ -6,7 +6,7 @@ una alerta utilizando cada una de las palabras.
 
 console.log('-Exercise 5.a:');
 
-var fiveWords = ['house', 'car', 'tree', 'cat', 'computer']
+var fiveWords = ['house', 'car', 'tree', 'cat', 'computer'];
 
 for (var i = 0; i < 5; i++) {
     alert(fiveWords[i]);
@@ -29,12 +29,12 @@ la cadena completa.
 
 console.log('\n-Esercise 5.c:');
 
-var sentence = ' '
+var sentence = ' ';
 
 for (var i = 0; i < 5; i++) {
     sentence += fiveWords[i] + ' ';
 }
-alert(sentence)
+alert(sentence);
 
 /* d. Crear una array vacío y con un bucle for de 10 repeticiones. Llenar el array con el número de la repetición, 
 es decir que al final de la ejecución del bucle for debería haber 10 elementos dentro del array, desde el número 0 
@@ -43,9 +43,9 @@ hasta al número 9. Mostrar por la consola del navegador el array final (utiliza
 
 console.log('\n-Esercise 5.d:');
 
-var emptyArray = []
+var emptyArray = [];
 
 for (var i = 0; i < 10; i++) {
-    emptyArray += [i]
+    emptyArray += [i];
 }
-console.log('Numbers 0 to 9: ' + emptyArray)
+console.log('Numbers 0 to 9: ' + emptyArray);

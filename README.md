@@ -9,7 +9,7 @@ This system will allow them to efficiently manage their proyects, schedule flow,
 
 ## How to open
   
-1- access to the folder "Semana-02"
+1- access to the folder of the week that you want to check
 
 2- open the file "index.html" on your browser
 
