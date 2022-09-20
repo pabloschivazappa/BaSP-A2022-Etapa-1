@@ -1,7 +1,7 @@
-.sidebar{
+aside{
     display: none;
 }
-.sidebar{
+aside{
     flex-direction: column;
     align-items: center;
     position: fixed;
@@ -10,22 +10,24 @@
     top: 91px;
     background: rgba(55, 56, 103, 0.1);
 }
-.sidebar input{
+aside form {
+    display: flex;
+    justify-content: center;
     width: 80%;
     height: 29px;
     margin-top: 60px;
 }
-.sidebar p{
+aside p{
     text-align: center;
     margin-top: 30px;
     font-weight: 700;
     font-size: 1.1rem;
     color: #373867;
 }
-.sidebar ul{
+aside ul{
     margin-top: 30px;
 }
-.sidebar ul li a{
+aside ul li a{
     display: block;
     text-align: center;
     text-decoration: none;
@@ -35,14 +37,14 @@
     color: #479679;
     border-top: 1px solid #000000;
 }
-.sidebar img{
+aside img{
     width: 60px;
     left: 95px;
     margin-top: 30px;
 }
 
 @media (min-width: 768px){
-    .sidebar{
+    aside{
       display: flex;
       max-width: 320px
     }

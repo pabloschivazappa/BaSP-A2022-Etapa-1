@@ -15,17 +15,30 @@
     </head>
     <body>
         <header>
-            <div class="rr-logo-head">
-                <img src="assets/img/RR-logo.png" alt="Rarium Rocket Logo">
+            <div class="headerContainer">
+                <div class="rr-logo-head">
+                    <img src="assets/img/RR-logo.png" alt="Rarium Rocket Logo">
+                </div>
+                <h1>TRACKGENIX</h1>
+                <div class="hamburguer-menu">
+                    <img src="assets/img/hamburguer-menu.png" alt="Hamburguer menu">
+                </div>
             </div>
-            <h1>TRACKGENIX</h1>
-            <div class="hamburguer-menu">
-                <img src="assets/img/hamburguer-menu.png" alt="Hamburguer menu">
-            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="">Features</a></li>
+                    <li><a href="">Why Should You Use Trackgenix?</a></li>
+                    <li><a href="">History</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Support</a></li>
+                </ul>
+            </nav>
         </header>
-        <section>
-            <div class="sidebar">
-            <input type="search" placeholder="Search">
+        <aside>
+            <form>
+                <input type="search" placeholder="Search">
+            </form>
             <p>
                 Menu
             </p>
@@ -36,53 +49,38 @@
                 <li><a href="">Contact Information</a></li>
             </ul>
             <img src="assets/img/RR-logo.png" alt="Radium Rocket Logo">
-            </div>
-        </section>
-        <nav class="nav">
-            <ul>
-                <li><a href="">Features</a></li>
-                <li><a href="">Why Should You Use Trackgenix?</a></li>
-                <li><a href="">History</a></li>
-                <li><a href="">Products</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Support</a></li>
-            </ul>
-        </nav>
+        </aside>
         <main>
             <section class="home">
-                    <h2>WELCOME</h2>
-                    <div class="homeContainer">
-                        <img src="assets/img/home-img.jpg" alt="Main image">
-                        <p>
-                            "TRACKGENIX" is a revolutionary system designed fot Gigatech Software Solutions SA. This 
-                            System sill allow them to efficiently manage thir proyects, schedule flow, selected work 
-                            teams and much more.
-                        </p>
-                    </div>
+                <h2>WELCOME</h2>
+                <div class="homeContainer">
+                    <img src="assets/img/home-img.jpg" alt="Main image">
+                    <p>
+                        "TRACKGENIX" is a revolutionary system designed fot Gigatech Software Solutions SA. This 
+                        System sill allow them to efficiently manage thir proyects, schedule flow, selected work 
+                        teams and much more.
+                    </p>
+                </div>
             </section>
             <section class="features">
                 <h3>Application Features</h3>
                 <div class="featuresColumns">
-                    <div class="featuresFirstColumn">
-                        <article>
-                            <h4>Hours Log</h4>
-                            <img src="assets/img/hours-log.png" alt="Hours log">
-                        </article>
-                        <article>
-                            <h4>Resourse Management</h4>
-                            <img src="assets/img/resourse-management.png" alt="Resourse management">
-                        </article>
-                    </div>
-                    <div class="featuresSecondColumn">
-                        <article>
-                            <h4>Reports</h4>
-                            <img src="assets/img/reports.png" alt="Reports">
-                        </article>
-                        <article>
-                            <h4>Multiple Roles</h4>
-                            <img src="assets/img/multiple_roles.png" alt="Multiple Roles">
-                        </article>
-                    </div>
+                    <article>
+                        <h4>Hours Log</h4>
+                        <img src="assets/img/hours-log.png" alt="Hours log">
+                    </article>
+                    <article>
+                        <h4>Resourse Management</h4>
+                        <img src="assets/img/resourse-management.png" alt="Resourse management">
+                    </article>
+                    <article>
+                        <h4>Reports</h4>
+                        <img src="assets/img/reports.png" alt="Reports">
+                    </article>
+                    <article>
+                        <h4>Multiple Roles</h4>
+                        <img src="assets/img/multiple_roles.png" alt="Multiple Roles">
+                    </article>
                 </div>
             </section>
             <section class="why">
@@ -138,20 +136,20 @@
             </section>
             <section class="form">
                 <h3>Inscription Form</h3>
-                <div class="formContainer">
-                    <form class="myForm">
+                <form class="formContainer">
+                    <div class="myForm">
                         <input type="text" name="Name" placeholder="Name">
                         <input type="email" name="Email" placeholder="Email">
-                    </form>
-                    <form class="choose">
+                    </div>
+                    <div class="choose">
                         <select name="contact area">
                             <option selected disabled hidden>-- Choose Contact Area --</option>
                             <option value="Human resources">Human Resources</option>
                             <option value="Systems">Systems</option>
                             <option value="Merchandising">Merchandising</option>
                         </select>
-                    </form>
-                    <form class="check">
+                    </div>
+                    <div class="check">
                         <div class="checkOne">
                             <label class="switch">
                                 <input type="checkbox">
@@ -170,14 +168,14 @@
                                 I am human
                             </p>
                         </div>
-                    </form>
-                    <form class="text">
+                    </div>
+                    <div class="text">
                         <textarea name="message" placeholder="Enter your text here..."></textarea>
-                    </form>
-                    <form class="submit">
+                    </div>
+                    <div class="submit">
                         <button type="button">Submit</button>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </section>
             <section class="mission">
                 <div class="missionHeader">
@@ -360,7 +358,7 @@
                             <div class="tutorialsLiDiv">
                                 "Unlocking Max Productivity: Advanced Tips and Tricks for Workers" <span class="time">
                                 12:40</span>
-                            </div class="tutorialsLiDiv">
+                            </div>
                         </li>
                         <li>
                             <div class="tutorialsLiDiv">
@@ -382,10 +380,15 @@
         </main>
         <footer>
             <ul>
-                <li><a href="https://www.facebook.com/" target="_blank"><img src="assets/img/facebook.png"></a></li>
-                <li><a href="https://twitter.com/" target="_blank"><img src="assets/img/twitter.png"></a></li>
-                <li><a href="https://www.instagram.com/" target="_blank"><img src="assets/img/instagram.png"></a></li>
-                <li><a href="https://www.linkedin.com/" target="_blank"><img src="assets/img/linkedin.png"></a></li>
+                <form>
+                    <li><a href="https://www.facebook.com/" target="_blank"><img src="assets/img/facebook.png"></a>
+                    </li>
+                    <li><a href="https://twitter.com/" target="_blank"><img src="assets/img/twitter.png"></a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank"><img src="assets/img/instagram.png"></a>
+                    </li>
+                    <li><a href="https://www.linkedin.com/" target="_blank"><img src="assets/img/linkedin.png"></a>
+                    </li>
+                </form>
             </ul>
             <p>
                 Rosario, Argentina

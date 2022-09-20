@@ -3,7 +3,7 @@ footer{
     flex-direction: column;
     margin-top: 150px;
 }
-footer ul{
+footer ul form{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
