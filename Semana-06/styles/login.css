@@ -35,6 +35,11 @@ main{
 .inputs input{
     height: 30px;
 }
+.inputs p{
+    color: red;
+    font-size: 0.8rem;
+    text-align: center;
+}
 .login button{
     margin-bottom: 10px;
     margin-top: 20px;
@@ -47,6 +52,12 @@ main{
     background-color: #4CAF50;
     color: white;
 
+}
+.borderGreen{
+    border: 2px solid green;
+}
+.borderRed{
+    border: 2px solid red;
 }
 
 @media (min-width: 768px){

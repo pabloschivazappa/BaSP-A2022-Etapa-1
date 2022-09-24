@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="../styles/aside.css">
         <link rel="stylesheet" href="../styles/sign-up.css">
         <link rel="stylesheet" href="../styles/footer.css">
+        <script src="../javascript/sign-up.js"></script>
     </head>
     <body>
         <header>
@@ -55,22 +56,23 @@
                     <h3>Sign Up</h3>
                     <div class="inputs">
                         <div class="firstColumn">
-                            <input type="text" name="First name" placeholder="Enter your name">
-                            <input type="text" name="Surname" placeholder="Enter your Surname">
-                            <input type="text" name="DNI" placeholder="Enter your DNI">
-                            <input type="date" name="Birthday" placeholder="Enter your birthday">
-                            <input type="text" name="Phone" placeholder="Enter your phone number">
-                            <input type="text" name="Adress" placeholder="Enter your adress">
+                            <input id="firstName" type="text" name="First name" placeholder="Enter your first name">
+                            <input id="surname" type="text" name="Surname" placeholder="Enter your surname">
+                            <input id="dni" type="text" name="DNI" placeholder="Enter your DNI">
+                            <input id="birthday" type="date" name="Birthday" placeholder="Enter your birthday">
+                            <input id="phone" type="text" name="Phone" placeholder="Enter your phone number">
+                            <input id="address" type="text" name="Adress" placeholder="Enter your adress">
                         </div>
                         <div class="secondColumn">
-                            <input type="text" name="Location" placeholder="Enter your location">
-                            <input type="text" name="Zipcode" placeholder="Enter your zipcode">
-                            <input type="text" name="Email" placeholder="Enter your Email">
-                            <input type="password" name="Password" placeholder="Enter your password">
-                            <input type="password" name="Password" placeholder="Repeat your password">
+                            <input id="location" type="text" name="Location" placeholder="Enter your location">
+                            <input id="zipcode" type="text" name="Zipcode" placeholder="Enter your zipcode">
+                            <input id="email" type="text" name="Email" placeholder="Enter your e-mail">
+                            <input id="password" type="password" name="Password" placeholder="Enter your password">
+                            <input id="repeatPassword" type="password" name="Repeat assword" 
+                            placeholder="Repeat your password">
                         </div>
                     </div>
-                    <button type="button">Login</button>
+                    <button id="createButton" type="button">Create</button>
                 </form>
             </section>
         </main>
