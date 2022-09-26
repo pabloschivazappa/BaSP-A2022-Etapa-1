@@ -51,7 +51,9 @@ window.onload = function() {
     firstName.onfocus = function() {
         firstName.value = '';
         firstName.classList.remove('borderRed');
+        if(document.querySelector('.paragraphOne')) {
         document.querySelector(".paragraphOne").remove();
+        };
     };
 
     var surname = document.getElementById('surname');
@@ -71,7 +73,9 @@ window.onload = function() {
     surname.onfocus = function() {
         surname.value = '';
         surname.classList.remove('borderRed');
+        if(document.querySelector('.paragraphTwo')) {
         document.querySelector(".paragraphTwo").remove();
+        };
     };
 
     var dni = document.getElementById('dni');
@@ -85,13 +89,15 @@ window.onload = function() {
             dni.parentNode.insertBefore(dniErrorMessage, dni.nextSibling);
         } else {
             dni.classList.add('borderGreen');
-        }
+        };
     };
 
     dni.onfocus = function() {
         dni.value = '';
         dni.classList.remove('borderRed');
+        if(document.querySelector('.paragraphThree')) {
         document.querySelector(".paragraphThree").remove();
+        };
     };
 
     var birthday = document.getElementById('birthday');
@@ -105,13 +111,15 @@ window.onload = function() {
             birthday.parentNode.insertBefore(birthdayErrorMessage, birthday.nextSibling);
         } else {
             birthday.classList.add('borderGreen');
-        }
+        };
     };
 
     birthday.onfocus = function() {
         birthday.value = '';
         birthday.classList.remove('borderRed');
+        if(document.querySelector('.paragraphFour')) {
         document.querySelector(".paragraphFour").remove();
+        };
     };
 
     var phone = document.getElementById('phone');
@@ -125,13 +133,15 @@ window.onload = function() {
             phone.parentNode.insertBefore(phoneErrorMessage, phone.nextSibling);
         } else {
             phone.classList.add('borderGreen');
-        }
+        };
     };
 
     phone.onfocus = function() {
         phone.value = '';
         phone.classList.remove('borderRed');
+        if(document.querySelector('.paragraphFour')) {
         document.querySelector(".paragraphFour").remove();
+        };
     };
 
     var address = document.getElementById('address');
@@ -145,13 +155,15 @@ window.onload = function() {
             address.parentNode.insertBefore(addressErrorMessage, address.nextSibling);
         } else {
             address.classList.add('borderGreen');
-        }
+        };
     };
 
     address.onfocus = function() {
         address.value = '';
         address.classList.remove('borderRed');
+        if(document.querySelector('.paragraphFive')) {
         document.querySelector(".paragraphFive").remove();
+        };
     };
 
     var location = document.getElementById('location');
@@ -165,13 +177,15 @@ window.onload = function() {
             location.parentNode.insertBefore(locationErrorMessage, location.nextSibling);
         } else {
             location.classList.add('borderGreen');
-        }
+        };
     };
 
     location.onfocus = function() {
         location.value = '';
         location.classList.remove('borderRed');
+        if(document.querySelector('.paragraphSix')) {
         document.querySelector(".paragraphSix").remove();
+        };
     };
 
     var zipcode = document.getElementById('zipcode');
@@ -185,13 +199,15 @@ window.onload = function() {
             zipcode.parentNode.insertBefore(zipcodeErrorMessage, zipcode.nextSibling);
         } else {
             zipcode.classList.add('borderGreen');
-        }
+        };
     };
 
     zipcode.onfocus = function() {
         zipcode.value = '';
         zipcode.classList.remove('borderRed');
+        if(document.querySelector('.paragraphSeven')) {
         document.querySelector(".paragraphSeven").remove();
+        };
     };
 
     var email = document.getElementById('email');
@@ -211,7 +227,9 @@ window.onload = function() {
     email.onfocus = function() {
         email.value = '';
         email.classList.remove('borderRed');
+        if(document.querySelector('.paragraphEight')) {
         document.querySelector(".paragraphEight").remove();
+        };
     };
 
     var password = document.getElementById('password');
@@ -225,13 +243,15 @@ window.onload = function() {
             password.parentNode.insertBefore(passwordErrorMessage, password.nextSibling);
         } else {
             password.classList.add('borderGreen');
-        }
+        };
     };
 
     password.onfocus = function() {
         password.value = '';
         password.classList.remove('borderRed');
+        if(document.querySelector('.paragraphNine')) {
         document.querySelector(".paragraphNine").remove();
+        };
     };
 
     var repeatPassword = document.getElementById('repeatPassword');
@@ -245,13 +265,15 @@ window.onload = function() {
             repeatPassword.parentNode.insertBefore(repeatPasswordErrorMessage, repeatPassword.nextSibling);
         } else {
             repeatPassword.classList.add('borderGreen');
-        }
+        };
     };
 
     repeatPassword.onfocus = function() {
         repeatPassword.value = '';
         repeatPassword.classList.remove('borderRed');
+        if(document.querySelector('.paragraphTen')) {
         document.querySelector(".paragraphTen").remove();
+        };
     };
 
     var createButton = document.getElementById('createButton');

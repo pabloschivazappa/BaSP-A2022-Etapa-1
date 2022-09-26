@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="../styles/aside.css">
         <link rel="stylesheet" href="../styles/landing.css">
         <link rel="stylesheet" href="../styles/footer.css">
+        <script src="../javascript/contact.js"></script>
     </head>
     <body>
         <header>
@@ -25,12 +26,12 @@
             </div>
             <nav class="nav">
                 <ul>
-                    <li><a href="">Features</a></li>
-                    <li><a href="">Why Should You Use Trackgenix?</a></li>
-                    <li><a href="">History</a></li>
-                    <li><a href="">Products</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Support</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#why">Why Should You Use Trackgenix?</a></li>
+                    <li><a href="#history">History</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#aboutUs">About Us</a></li>
+                    <li><a href="#support">Support</a></li>
                 </ul>
             </nav>
         </header>
@@ -45,12 +46,12 @@
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./sign-up.html">SignUp</a></li>
                 <li><a href="./login.html">Login</a></li>
-                <li><a href="">Contact Information</a></li>
+                <li><a href="#form">Contact Information</a></li>
             </ul>
             <img src="../assets/img/RR-logo.png" alt="Radium Rocket Logo">
         </aside>
         <main>
-            <section class="home">
+            <section id="home" class="home">
                 <h2>WELCOME</h2>
                 <div class="homeContainer">
                     <img src="../assets/img/home-img.jpg" alt="Main image">
@@ -61,7 +62,7 @@
                     </p>
                 </div>
             </section>
-            <section class="features">
+            <section id="features" class="features">
                 <h3>Application Features</h3>
                 <div class="featuresColumns">
                     <article>
@@ -82,7 +83,7 @@
                     </article>
                 </div>
             </section>
-            <section class="why">
+            <section id="why" class="why">
                 <h3>Why you should use Trackgenix?</h3>
                 <div class="whyContainer">
                     <article>
@@ -133,15 +134,19 @@
                     </article>
                 </div>
             </section>
-            <section class="form">
+            <section id="form" class="form">
                 <h3>Inscription Form</h3>
                 <form class="formContainer">
                     <div class="myForm">
-                        <input type="text" name="Name" placeholder="Name">
-                        <input type="email" name="Email" placeholder="Email">
+                        <div class="inputNameDiv">
+                            <input id="name" type="text" name="Name" placeholder="Name">
+                        </div>
+                        <div class="inputEmailDiv">
+                            <input id="email" type="email" name="Email" placeholder="Email">
+                        </div>
                     </div>
                     <div class="choose">
-                        <select name="contact area">
+                        <select id="select" name="contact area">
                             <option selected disabled hidden>-- Choose Contact Area --</option>
                             <option value="Human resources">Human Resources</option>
                             <option value="Systems">Systems</option>
@@ -169,7 +174,7 @@
                         </div>
                     </div>
                     <div class="text">
-                        <textarea name="message" placeholder="Enter your text here..."></textarea>
+                        <textarea id="textArea" name="message" placeholder="Enter your text here..."></textarea>
                     </div>
                     <div class="submit">
                         <button type="button">Submit</button>
@@ -202,7 +207,7 @@
                     -Satisfied Costumer
                 </p>
             </section>
-            <section class="aboutUs">
+            <section id="aboutUs" class="aboutUs">
                 <h3>About Us</h3>
                 <div class="aboutUsContainer">
                     <p>
@@ -217,7 +222,7 @@
                     <img src="../assets/img/security-protection-anti-virus-software.jpeg" alt="Security">
                 </div>
             </section>
-            <section class="products">
+            <section id="products" class="products">
                 <h3>Our Products</h3>
                 <div class="productsContainer">
                     <article>
@@ -279,7 +284,7 @@
                     </article>
                 </div>
             </section>
-            <section class="company">
+            <section id="history" class="company">
                 <h3>Company</h3>
                 <div class="companyContainer">
                     <article>
@@ -317,7 +322,7 @@
                     </article>
                 </div>
             </section>
-            <section class="support">
+            <section id="support" class="support">
                 <h3>Support</h3>
                 <div class="supportContainer">
                     <article>

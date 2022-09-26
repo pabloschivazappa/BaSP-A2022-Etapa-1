@@ -19,7 +19,9 @@ window.onload = function() {
     email.onfocus = function() {
         email.value = '';
         email.classList.remove('borderRed');
+        if(document.querySelector('.paragraphOne')) {
         document.querySelector(".paragraphOne").remove();
+        };
     };
 
     var password = document.getElementById('password');
@@ -39,7 +41,9 @@ window.onload = function() {
     password.onfocus = function() {
         password.value = '';
         password.classList.remove('borderRed');
+        if(document.querySelector('.paragraphTwo')) {
         document.querySelector(".paragraphTwo").remove();
+        };
     };
 
     var loginButton = document.getElementById('loginButton');
