@@ -2,25 +2,46 @@ window.onload = function() {
 
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 
-    function letterValidation (input) {
-        if (input.toLowerCase() != input.toUpperCase()) {
-            return false;
-        } else {
-            return true;
+    function letterValidation(text){
+        var itsLetter = true;
+        for (var i = 0; i < text.length; i++) {
+            var lowerCase = text[i].toLowerCase();
+            var upperCase = text[i].toUpperCase();
+            if (lowerCase == upperCase){
+                if (text[i] == " "){
+                    continue;
+                };
+                itsLetter = false;
+                break;
+            };
         };
+        return itsLetter;
     };
 
-
-// FIRST NAME
+    function space (text) {
+        var character = text.split('');
+        for (var i = 0; i < character.length; i++) {
+            if (character[i] == ' ') {
+                if (character[0] == ' ') {
+                    return false;
+                } if (character[i + 1] == ' ') {
+                    return false;
+                } if (character[character.length - 1] == ' ') {
+                    return false;
+                };
+            };
+        };
+    return true;
+    };
 
     var firstName = document.getElementById('firstName');
 
     firstName.onblur = function() {
-        if (firstName.value.length <= 3 || symbolsValidation(firstName.value)) {
+        if (firstName.value.length <= 3 || !letterValidation(firstName.value)) {
             firstName.classList.add('borderRed');
             var firstNameErrorMessage = document.createElement('p');
             firstNameErrorMessage.classList.add('paragraphOne');
-            firstNameErrorMessage.innerHTML = 'This first name is not valid';
+            firstNameErrorMessage.innerHTML = 'It is required more than three letters';
             firstName.parentNode.insertBefore(firstNameErrorMessage, firstName.nextSibling);
         } else {
             firstName.classList.add('borderGreen');
@@ -33,16 +54,14 @@ window.onload = function() {
         document.querySelector(".paragraphOne").remove();
     };
 
-// SURNAME
-
     var surname = document.getElementById('surname');
 
     surname.onblur = function() {
-        if (surname.value.length <= 3 || letterValidation(surname.value)) {
+        if (surname.value.length <= 3 || !letterValidation(surname.value)) {
             surname.classList.add('borderRed');
             var surnameErrorMessage = document.createElement('p');
             surnameErrorMessage.classList.add('paragraphTwo');
-            surnameErrorMessage.innerHTML = 'This surname is not valid';
+            surnameErrorMessage.innerHTML = 'It is required more than three letters';
             surname.parentNode.insertBefore(surnameErrorMessage, surname.nextSibling);
         } else {
             surname.classList.add('borderGreen');
@@ -55,8 +74,6 @@ window.onload = function() {
         document.querySelector(".paragraphTwo").remove();
     };
 
-// DNI
-
     var dni = document.getElementById('dni');
 
     dni.onblur = function() {
@@ -64,7 +81,7 @@ window.onload = function() {
             dni.classList.add('borderRed');
             var dniErrorMessage = document.createElement('p');
             dniErrorMessage.classList.add('paragraphThree');
-            dniErrorMessage.innerHTML = 'This DNI is not valid';
+            dniErrorMessage.innerHTML = 'It is required seven or more numbers';
             dni.parentNode.insertBefore(dniErrorMessage, dni.nextSibling);
         } else {
             dni.classList.add('borderGreen');
@@ -77,8 +94,6 @@ window.onload = function() {
         document.querySelector(".paragraphThree").remove();
     };
 
-//BIRTHDAY
-
     var birthday = document.getElementById('birthday');
 
     birthday.onblur = function() {
@@ -86,7 +101,7 @@ window.onload = function() {
             birthday.classList.add('borderRed');
             var birthdayErrorMessage = document.createElement('p');
             birthdayErrorMessage.classList.add('paragraphFour');
-            birthdayErrorMessage.innerHTML = 'This birthday is not valid';
+            birthdayErrorMessage.innerHTML = 'This input is required';
             birthday.parentNode.insertBefore(birthdayErrorMessage, birthday.nextSibling);
         } else {
             birthday.classList.add('borderGreen');
@@ -99,8 +114,6 @@ window.onload = function() {
         document.querySelector(".paragraphFour").remove();
     };
 
-//PHONE
-
     var phone = document.getElementById('phone');
 
     phone.onblur = function() {
@@ -108,7 +121,7 @@ window.onload = function() {
             phone.classList.add('borderRed');
             var phoneErrorMessage = document.createElement('p');
             phoneErrorMessage.classList.add('paragraphFour');
-            phoneErrorMessage.innerHTML = 'This phone numer is not valid';
+            phoneErrorMessage.innerHTML = 'It is required ten or more numbers';
             phone.parentNode.insertBefore(phoneErrorMessage, phone.nextSibling);
         } else {
             phone.classList.add('borderGreen');
@@ -121,16 +134,14 @@ window.onload = function() {
         document.querySelector(".paragraphFour").remove();
     };
 
-// ADDRESS
-
     var address = document.getElementById('address');
 
     address.onblur = function() {
-        if (address.value.length < 5) {
+        if (address.value.length < 5 || !space(address.value)) {
             address.classList.add('borderRed');
             var addressErrorMessage = document.createElement('p');
             addressErrorMessage.classList.add('paragraphFive');
-            addressErrorMessage.innerHTML = 'This address is not valid';
+            addressErrorMessage.innerHTML = 'It is required more than five characters';
             address.parentNode.insertBefore(addressErrorMessage, address.nextSibling);
         } else {
             address.classList.add('borderGreen');
@@ -143,8 +154,6 @@ window.onload = function() {
         document.querySelector(".paragraphFive").remove();
     };
 
-// LOCATION
-
     var location = document.getElementById('location');
 
     location.onblur = function() {
@@ -152,7 +161,7 @@ window.onload = function() {
             location.classList.add('borderRed');
             var locationErrorMessage = document.createElement('p');
             locationErrorMessage.classList.add('paragraphSix');
-            locationErrorMessage.innerHTML = 'This location is not valid';
+            locationErrorMessage.innerHTML = 'It is required more than five characters';
             location.parentNode.insertBefore(locationErrorMessage, location.nextSibling);
         } else {
             location.classList.add('borderGreen');
@@ -165,8 +174,6 @@ window.onload = function() {
         document.querySelector(".paragraphSix").remove();
     };
 
-// ZIPCODE
-
     var zipcode = document.getElementById('zipcode');
 
     zipcode.onblur = function() {
@@ -174,7 +181,7 @@ window.onload = function() {
             zipcode.classList.add('borderRed');
             var zipcodeErrorMessage = document.createElement('p');
             zipcodeErrorMessage.classList.add('paragraphSeven');
-            zipcodeErrorMessage.innerHTML = 'This zipcode numer is not valid';
+            zipcodeErrorMessage.innerHTML = 'It is required between four and five numbers';
             zipcode.parentNode.insertBefore(zipcodeErrorMessage, zipcode.nextSibling);
         } else {
             zipcode.classList.add('borderGreen');
@@ -186,8 +193,6 @@ window.onload = function() {
         zipcode.classList.remove('borderRed');
         document.querySelector(".paragraphSeven").remove();
     };
-
-// EMAIL
 
     var email = document.getElementById('email');
 
@@ -209,8 +214,6 @@ window.onload = function() {
         document.querySelector(".paragraphEight").remove();
     };
 
-// PASSWORD
-
     var password = document.getElementById('password');
 
     password.onblur = function() {
@@ -218,7 +221,7 @@ window.onload = function() {
             password.classList.add('borderRed');
             var passwordErrorMessage = document.createElement('p');
             passwordErrorMessage.classList.add('paragraphNine');
-            passwordErrorMessage.innerHTML = 'This password is not valid';
+            passwordErrorMessage.innerHTML = 'It is required more than eight characters';
             password.parentNode.insertBefore(passwordErrorMessage, password.nextSibling);
         } else {
             password.classList.add('borderGreen');
@@ -231,8 +234,6 @@ window.onload = function() {
         document.querySelector(".paragraphNine").remove();
     };
 
-//REPEAT PASSWORD
-
     var repeatPassword = document.getElementById('repeatPassword');
 
     repeatPassword.onblur = function() {
@@ -240,7 +241,7 @@ window.onload = function() {
             repeatPassword.classList.add('borderRed');
             var repeatPasswordErrorMessage = document.createElement('p');
             repeatPasswordErrorMessage.classList.add('paragraphTen');
-            repeatPasswordErrorMessage.innerHTML = 'This Password is not valid';
+            repeatPasswordErrorMessage.innerHTML = 'It is not matching with password';
             repeatPassword.parentNode.insertBefore(repeatPasswordErrorMessage, repeatPassword.nextSibling);
         } else {
             repeatPassword.classList.add('borderGreen');
@@ -252,8 +253,6 @@ window.onload = function() {
         repeatPassword.classList.remove('borderRed');
         document.querySelector(".paragraphTen").remove();
     };
-
-// SIGN UP BUTTON
 
     var createButton = document.getElementById('createButton');
 

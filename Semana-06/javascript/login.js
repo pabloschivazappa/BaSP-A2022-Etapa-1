@@ -2,8 +2,6 @@ window.onload = function() {
     
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 
-// EMAIL
-
     var email = document.getElementById('email');
 
     email.onblur = function() {
@@ -23,14 +21,11 @@ window.onload = function() {
         email.classList.remove('borderRed');
         document.querySelector(".paragraphOne").remove();
     };
-        
-// PASSWORD
 
     var password = document.getElementById('password');
-    var passwordExpression = /^[A-Za-z0-9]*$/;
 
     password.onblur = function() {
-        if(!password.value.match(passwordExpression) || password.value == ''){
+        if(password.value == ''){
             password.classList.add('borderRed');
             var passwordErrorMessage = document.createElement('p');
             passwordErrorMessage.classList.add('paragraphTwo');
@@ -46,8 +41,6 @@ window.onload = function() {
         password.classList.remove('borderRed');
         document.querySelector(".paragraphTwo").remove();
     };
-
-// LOGIN BUTTON
 
     var loginButton = document.getElementById('loginButton');
 
