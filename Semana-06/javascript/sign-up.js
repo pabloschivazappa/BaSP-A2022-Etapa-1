@@ -1,24 +1,28 @@
 window.onload = function() {
 
-    var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 
-    's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'Y', 'J', 'K', 'L', 'M', 'N', 
-    'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-    var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+
+    function letterValidation (input) {
+        if (input.toLowerCase() != input.toUpperCase()) {
+            return false;
+        } else {
+            return true;
+        };
+    };
+
 
 // FIRST NAME
 
     var firstName = document.getElementById('firstName');
 
     firstName.onblur = function() {
-        if (firstName.value.length <= 3) {
+        if (firstName.value.length <= 3 || symbolsValidation(firstName.value)) {
             firstName.classList.add('borderRed');
             var firstNameErrorMessage = document.createElement('p');
             firstNameErrorMessage.classList.add('paragraphOne');
             firstNameErrorMessage.innerHTML = 'This first name is not valid';
             firstName.parentNode.insertBefore(firstNameErrorMessage, firstName.nextSibling);
-        }
-        else {
+        } else {
             firstName.classList.add('borderGreen');
         }
     };
@@ -34,16 +38,15 @@ window.onload = function() {
     var surname = document.getElementById('surname');
 
     surname.onblur = function() {
-        if (surname.value.length <= 3) {
+        if (surname.value.length <= 3 || letterValidation(surname.value)) {
             surname.classList.add('borderRed');
             var surnameErrorMessage = document.createElement('p');
             surnameErrorMessage.classList.add('paragraphTwo');
             surnameErrorMessage.innerHTML = 'This surname is not valid';
             surname.parentNode.insertBefore(surnameErrorMessage, surname.nextSibling);
-        }
-        else {
+        } else {
             surname.classList.add('borderGreen');
-        }
+        };
     };
 
     surname.onfocus = function() {
@@ -57,14 +60,13 @@ window.onload = function() {
     var dni = document.getElementById('dni');
 
     dni.onblur = function() {
-        if (dni.value.length <= 7) {
+        if (dni.value.length <= 7 || isNaN(dni.value)) {
             dni.classList.add('borderRed');
             var dniErrorMessage = document.createElement('p');
             dniErrorMessage.classList.add('paragraphThree');
             dniErrorMessage.innerHTML = 'This DNI is not valid';
             dni.parentNode.insertBefore(dniErrorMessage, dni.nextSibling);
-        }
-        else {
+        } else {
             dni.classList.add('borderGreen');
         }
     };
@@ -86,8 +88,7 @@ window.onload = function() {
             birthdayErrorMessage.classList.add('paragraphFour');
             birthdayErrorMessage.innerHTML = 'This birthday is not valid';
             birthday.parentNode.insertBefore(birthdayErrorMessage, birthday.nextSibling);
-        }
-        else {
+        } else {
             birthday.classList.add('borderGreen');
         }
     };
@@ -103,14 +104,13 @@ window.onload = function() {
     var phone = document.getElementById('phone');
 
     phone.onblur = function() {
-        if (phone.value.length != 10) {
+        if (phone.value.length != 10 || isNaN(phone.value)) {
             phone.classList.add('borderRed');
             var phoneErrorMessage = document.createElement('p');
             phoneErrorMessage.classList.add('paragraphFour');
             phoneErrorMessage.innerHTML = 'This phone numer is not valid';
             phone.parentNode.insertBefore(phoneErrorMessage, phone.nextSibling);
-        }
-        else {
+        } else {
             phone.classList.add('borderGreen');
         }
     };
@@ -132,8 +132,7 @@ window.onload = function() {
             addressErrorMessage.classList.add('paragraphFive');
             addressErrorMessage.innerHTML = 'This address is not valid';
             address.parentNode.insertBefore(addressErrorMessage, address.nextSibling);
-        }
-        else {
+        } else {
             address.classList.add('borderGreen');
         }
     };
@@ -155,8 +154,7 @@ window.onload = function() {
             locationErrorMessage.classList.add('paragraphSix');
             locationErrorMessage.innerHTML = 'This location is not valid';
             location.parentNode.insertBefore(locationErrorMessage, location.nextSibling);
-        }
-        else {
+        } else {
             location.classList.add('borderGreen');
         }
     };
@@ -172,14 +170,13 @@ window.onload = function() {
     var zipcode = document.getElementById('zipcode');
 
     zipcode.onblur = function() {
-        if (zipcode.value.length < 4 || zipcode.value.length > 5) {
+        if (zipcode.value.length < 4 || zipcode.value.length > 5 || isNaN(zipcode.value)) {
             zipcode.classList.add('borderRed');
             var zipcodeErrorMessage = document.createElement('p');
             zipcodeErrorMessage.classList.add('paragraphSeven');
             zipcodeErrorMessage.innerHTML = 'This zipcode numer is not valid';
             zipcode.parentNode.insertBefore(zipcodeErrorMessage, zipcode.nextSibling);
-        }
-        else {
+        } else {
             zipcode.classList.add('borderGreen');
         }
     };
@@ -223,8 +220,7 @@ window.onload = function() {
             passwordErrorMessage.classList.add('paragraphNine');
             passwordErrorMessage.innerHTML = 'This password is not valid';
             password.parentNode.insertBefore(passwordErrorMessage, password.nextSibling);
-        }
-        else {
+        } else {
             password.classList.add('borderGreen');
         }
     };
@@ -240,14 +236,13 @@ window.onload = function() {
     var repeatPassword = document.getElementById('repeatPassword');
 
     repeatPassword.onblur = function() {
-        if (repeatPassword.value.length < 8) {
+        if (repeatPassword.value.length < 8 || repeatPassword.value != password.value) {
             repeatPassword.classList.add('borderRed');
             var repeatPasswordErrorMessage = document.createElement('p');
             repeatPasswordErrorMessage.classList.add('paragraphTen');
             repeatPasswordErrorMessage.innerHTML = 'This Password is not valid';
             repeatPassword.parentNode.insertBefore(repeatPasswordErrorMessage, repeatPassword.nextSibling);
-        }
-        else {
+        } else {
             repeatPassword.classList.add('borderGreen');
         }
     };
