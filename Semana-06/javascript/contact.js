@@ -10,9 +10,10 @@ window.onload = function() {
             if (lowerCase == upperCase){
                 if (text[i] == " "){
                     continue;
-                };
+                } else {
                 itsLetter = false;
                 break;
+                };
             };
         };
         return itsLetter;
