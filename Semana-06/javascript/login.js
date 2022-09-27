@@ -2,6 +2,18 @@ window.onload = function() {
     
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 
+    function letterNumberValidation (text) {
+        for (let i = 0; i < text.length; i++) {
+            if ((text.codePointAt(i) >= 48 && text.codePointAt(i) <= 57) 
+            || (text.codePointAt(i) >= 65 && text.codePointAt(i) <= 90) 
+            || (text.codePointAt(i) >= 97 && text.codePointAt(i) <= 122)){
+            }else{
+                return false;
+            };
+        };
+        return true;
+    };
+
     var email = document.getElementById('email');
 
     email.onblur = function() {
@@ -27,7 +39,7 @@ window.onload = function() {
     var password = document.getElementById('password');
 
     password.onblur = function() {
-        if(password.value == ''){
+        if(!letterNumberValidation(password.value)){
             password.classList.add('borderRed');
             var passwordErrorMessage = document.createElement('p');
             passwordErrorMessage.classList.add('paragraphTwo');

@@ -18,6 +18,19 @@ window.onload = function() {
         return itsLetter;
     };
 
+    function letterNumberSpaceValidation (text) {
+        for (let i = 0; i < text.length; i++) {
+            if ((text.codePointAt(i) >= 48 && text.codePointAt(i) <= 57) 
+            || (text.codePointAt(i) >= 65 && text.codePointAt(i) <= 90) 
+            || (text.codePointAt(i) >= 97 && text.codePointAt(i) <= 122)
+            || (text.codePointAt(i) === 32)){
+            }else{
+                return false;
+            };
+        };
+        return true;
+    };
+
     var name = document.getElementById('name');
 
     name.onblur = function() {
@@ -25,7 +38,7 @@ window.onload = function() {
             name.classList.add('borderRed');
             var nameErrorMessage = document.createElement('p');
             nameErrorMessage.classList.add('paragraphOne');
-            nameErrorMessage.innerHTML = 'It is required more than three letters';
+            nameErrorMessage.innerHTML = 'This field is required';
             name.parentNode.insertBefore(nameErrorMessage, name.nextSibling);
         } else {
             name.classList.add('borderGreen');
@@ -86,7 +99,7 @@ window.onload = function() {
     var textArea = document.getElementById('textArea');
 
     textArea.onblur = function() {
-        if (textArea.value.length <= 3) {
+        if (textArea.value.length <= 3 || !letterNumberSpaceValidation(textArea.value)) {
             textArea.classList.add('borderRed');
             var textAreaErrorMessage = document.createElement('p');
             textAreaErrorMessage.classList.add('paragraphFour');
@@ -105,4 +118,19 @@ window.onload = function() {
         };
     };
 
+    var submitButton = document.getElementById('submitButton');
+
+    submitButton.onclick = function(e) {
+        e.preventDefault();
+
+        if(name.classList.contains('borderRed') || email.classList.contains('borderRed') || 
+        select.classList.contains('borderRed') || textArea.classList.contains('borderRed')) {
+            alert('One or more inputs are not valids');
+        } else if (name.value == '' || email.value == '' || select.value == '' || textArea.value == '') {
+            alert('One or more inputs are empty');
+        } else {
+            alert('Your name is: ' + name.value + '\n' + 'Your email is: ' + email.value + '\n' + 
+            'Your area is: ' + select.value + '\n' + 'Your text is: ' + textArea.value);
+        };
+    };
 };

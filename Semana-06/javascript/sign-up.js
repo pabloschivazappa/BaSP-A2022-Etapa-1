@@ -18,20 +18,29 @@ window.onload = function() {
         return itsLetter;
     };
 
-    function space (text) {
-        var character = text.split('');
-        for (var i = 0; i < character.length; i++) {
-            if (character[i] == ' ') {
-                if (character[0] == ' ') {
-                    return false;
-                } if (character[i + 1] == ' ') {
-                    return false;
-                } if (character[character.length - 1] == ' ') {
-                    return false;
-                };
+    function letterNumberValidation (text) {
+        for (let i = 0; i < text.length; i++) {
+            if ((text.codePointAt(i) >= 48 && text.codePointAt(i) <= 57) 
+            || (text.codePointAt(i) >= 65 && text.codePointAt(i) <= 90) 
+            || (text.codePointAt(i) >= 97 && text.codePointAt(i) <= 122)){
+            }else{
+                return false;
             };
         };
-    return true;
+        return true;
+    };
+
+    function letterNumberSpaceValidation (text) {
+        for (let i = 0; i < text.length; i++) {
+            if ((text.codePointAt(i) >= 48 && text.codePointAt(i) <= 57) 
+            || (text.codePointAt(i) >= 65 && text.codePointAt(i) <= 90) 
+            || (text.codePointAt(i) >= 97 && text.codePointAt(i) <= 122)
+            || (text.codePointAt(i) === 32)){
+            }else{
+                return false;
+            };
+        };
+        return true;
     };
 
     var firstName = document.getElementById('firstName');
@@ -147,7 +156,7 @@ window.onload = function() {
     var address = document.getElementById('address');
 
     address.onblur = function() {
-        if (address.value.length < 5 || !space(address.value)) {
+        if (address.value.length < 5 || !letterNumberSpaceValidation(address.trim().value)) {
             address.classList.add('borderRed');
             var addressErrorMessage = document.createElement('p');
             addressErrorMessage.classList.add('paragraphFive');
@@ -169,7 +178,7 @@ window.onload = function() {
     var location = document.getElementById('location');
 
     location.onblur = function() {
-        if (location.value.length <= 3) {
+        if (location.value.length <= 3 || !letterNumberSpaceValidation(location.value)) {
             location.classList.add('borderRed');
             var locationErrorMessage = document.createElement('p');
             locationErrorMessage.classList.add('paragraphSix');
@@ -235,7 +244,7 @@ window.onload = function() {
     var password = document.getElementById('password');
 
     password.onblur = function() {
-        if (password.value.length < 8) {
+        if (password.value.length < 8 || !letterNumberValidation(password.value)) {
             password.classList.add('borderRed');
             var passwordErrorMessage = document.createElement('p');
             passwordErrorMessage.classList.add('paragraphNine');
@@ -257,7 +266,7 @@ window.onload = function() {
     var repeatPassword = document.getElementById('repeatPassword');
 
     repeatPassword.onblur = function() {
-        if (repeatPassword.value.length < 8 || repeatPassword.value != password.value) {
+        if (repeatPassword.value != password.value) {
             repeatPassword.classList.add('borderRed');
             var repeatPasswordErrorMessage = document.createElement('p');
             repeatPasswordErrorMessage.classList.add('paragraphTen');
