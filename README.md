@@ -49,7 +49,7 @@ This week we start with Javascript. We have to do some exercises brught in class
 
 Github repository: https://pabloschivazappa.github.io/BaSP-A2022-Etapa-1/Semana-05/index.html
 
-### Week 05 - Javascript
+### Week 06 - Javascript on a web page
 
 This week we did sign in and login pages and we implement Javascript on this pages to validate the inputs of the forms.
 
