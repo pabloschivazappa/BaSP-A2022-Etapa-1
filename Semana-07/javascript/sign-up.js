@@ -290,6 +290,13 @@ window.onload = function() {
     createButton.onclick = function(e) {
         e.preventDefault();
 
+        var year = birthday.value.substring(0, birthday.value.indexOf('-'));
+            var month = birthday.value.substring(birthday.value.indexOf('-') + 1, birthday.value.indexOf('-') + 3);
+            var day = birthday.value.substring(birthday.value.indexOf('-') + 4,  birthday.value.indexOf('-') 
+            + birthday.value.length);
+            var birthdayArray = [month, day, year];
+            var newBirthday = birthdayArray.join('/');
+
         if(firstName.classList.contains('borderRed') || surname.classList.contains('borderRed') || 
         dni.classList.contains('borderRed') || phone.classList.contains('borderRed') || 
         address.classList.contains('borderRed') || location.classList.contains('borderRed') || 
@@ -301,11 +308,29 @@ window.onload = function() {
         password.value == '' || repeatPassword.value == '') {
             alert('One or more inputs are empty');
         } else {
-            alert('Your first name is: ' + firstName.value + '\n' + 'Your surname is: ' + surname.value + '\n' + 
-            'Your dni is: ' + dni.value + '\n' + 'Your phone is: ' + phone.value + '\n' + 'Your birthday is: ' + 
-            birthday.value + '\n' + 'Your address is: ' + address.value + '\n' + 'Your location is: ' + 
-            location.value + '\n' + 'Your zipcode is: ' + zipcode.value + '\n' + 'Your email is: ' + email.value + 
-            '\n' + 'Your password is: ' + password.value);
+            var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup?name=' + firstName.value + 
+            "&lastName=" + lastName.value+ "&dni=" + dni.value + "&dob=" + newBirthday+ "&phone=" + phone.value + 
+            "&address=" + address.value + "&city="+ location.value + "&zip=" + zipcode.value+ "&email=" + email.value + 
+            "&password=" + password.value;
+
+            fetch(url)
+                .then(function(resp){
+                    return resp.json();
+                })
+                .then(function(dataJson){
+                    if (!dataJson.success){
+                        throw new Error('Error: ')
+                    }
+                    alert(dataJson.msg + '\n' + 'Your first name is: ' + firstName.value + '\n' + 'Your surname is: ' 
+                    + surname.value + '\n' + 'Your dni is: ' + dni.value + '\n' + 'Your phone is: ' + phone.value 
+                    + '\n' + 'Your birthday is: ' + birthday.value + '\n' + 'Your address is: ' + address.value + 
+                    '\n' + 'Your location is: ' + location.value + '\n' + 'Your zipcode is: ' + zipcode.value + 
+                    '\n' + 'Your email is: ' + email.value + '\n' + 'Your password is: ' + password.value + 
+                    '\n' + 'Success: ' + dataJson.success);
+                })
+                .catch(function(error){
+                    alert(error)
+                })
         };
     };
 }
