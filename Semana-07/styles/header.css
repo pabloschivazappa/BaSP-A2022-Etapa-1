@@ -1,0 +1,51 @@
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 91px;
+    background-color: #373867;
+    color: #46A07B;
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 1;
+}
+.rr-logo-head img {
+    width: 59px;
+}
+nav{
+    display: none;
+}
+.nav{
+    position: fixed;
+    height: 56px;
+    width: max(70%, (100% - 320px) );
+    top: 91px;
+    margin-left: min(30%, 320px);
+    background-color: #373867;
+    z-index: 1;
+}
+.nav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.nav a{
+    position: relative;
+    width: 208px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #479679;
+    text-decoration: none;
+}
+
+@media (min-width: 768px){
+    .hamburguer-menu{
+        visibility: hidden;
+    }
+    nav{
+        display: flex;
+    }
+}

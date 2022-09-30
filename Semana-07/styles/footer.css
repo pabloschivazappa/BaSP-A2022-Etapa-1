@@ -1,0 +1,27 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+}
+footer ul form{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 54px;
+    background: #373867;
+}
+footer ul img{
+    width: 35px;
+}
+footer p{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px){
+    footer{
+      margin-left: min(30%, 320px);
+    }
+}

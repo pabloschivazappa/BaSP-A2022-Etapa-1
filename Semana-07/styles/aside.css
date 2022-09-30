@@ -1,0 +1,51 @@
+aside{
+    display: none;
+}
+aside{
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 30%;
+    height: 100%;
+    top: 91px;
+    background: rgba(55, 56, 103, 0.1);
+}
+aside form {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 29px;
+    margin-top: 60px;
+}
+aside p{
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #373867;
+}
+aside ul{
+    margin-top: 30px;
+}
+aside ul li a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 65px;
+    color: #479679;
+    border-top: 1px solid #000000;
+}
+aside img{
+    width: 60px;
+    left: 95px;
+    margin-top: 30px;
+}
+
+@media (min-width: 768px){
+    aside{
+      display: flex;
+      max-width: 320px
+    }
+}
