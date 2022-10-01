@@ -85,7 +85,7 @@ window.onload = function() {
                 })
                 .then(function(dataJson){
                     if (!dataJson.success){
-                        throw new Error('Error: ')
+                        throw new Error(dataJson.msg + '\n' + 'Error: ' + dataJson.success)
                     }
                     alert(dataJson.msg + '\n' + 'Your mail is: ' + email.value + '\n' + 'Your password is: ' + password.value + '\n' + 'Success: ' + dataJson.success);
                 })

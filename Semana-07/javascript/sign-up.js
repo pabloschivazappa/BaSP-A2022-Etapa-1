@@ -44,6 +44,7 @@ window.onload = function() {
     };
 
     var firstName = document.getElementById('firstName');
+    firstName.value = localStorage.getItem('name');
 
     firstName.onblur = function() {
         if (firstName.value.length <= 3 || !letterValidation(firstName.value)) {
@@ -66,6 +67,7 @@ window.onload = function() {
     };
 
     var surname = document.getElementById('surname');
+    surname.value = localStorage.getItem('surname');
 
     surname.onblur = function() {
         if (surname.value.length <= 3 || !letterValidation(surname.value)) {
@@ -88,7 +90,8 @@ window.onload = function() {
     };
 
     var dni = document.getElementById('dni');
-
+    dni.value = localStorage.getItem('dni');
+    
     dni.onblur = function() {
         if (dni.value.length <= 7 || isNaN(dni.value)) {
             dni.classList.add('borderRed');
@@ -111,6 +114,23 @@ window.onload = function() {
 
     var birthday = document.getElementById('birthday');
 
+    function birthdayRework() {
+        var localStorageBirthday = localStorage.getItem('birthday');
+        var year = localStorageBirthday.substring(0, localStorageBirthday.indexOf('/'));
+        var month = localStorageBirthday.substring(localStorageBirthday.indexOf('/') + 1, 
+        localStorageBirthday.indexOf('/') + 3);
+        var day = localStorageBirthday.substring(localStorageBirthday.indexOf('/') + 4,  
+        localStorageBirthday.indexOf('/') + localStorageBirthday.length);
+        var birthdayArray = [day, year, month];
+        var newBirthday = birthdayArray.join('-');
+        return newBirthday;
+    }
+    
+    localStorage.setItem('birthday', birthdayRework());
+
+    birthday.value = localStorage.getItem('birthday');
+
+
     birthday.onblur = function() {
         if (birthday.value == '') {
             birthday.classList.add('borderRed');
@@ -132,6 +152,7 @@ window.onload = function() {
     };
 
     var phone = document.getElementById('phone');
+    phone.value = localStorage.getItem('phone');
 
     phone.onblur = function() {
         if (phone.value.length != 10 || isNaN(phone.value)) {
@@ -154,9 +175,10 @@ window.onload = function() {
     };
 
     var address = document.getElementById('address');
+    address.value = localStorage.getItem('address');
 
     address.onblur = function() {
-        if (address.value.length < 5 || !letterNumberSpaceValidation(address.trim().value)) {
+        if (address.value.length < 5 || !letterNumberSpaceValidation(address.value.trim())) {
             address.classList.add('borderRed');
             var addressErrorMessage = document.createElement('p');
             addressErrorMessage.classList.add('paragraphFive');
@@ -176,6 +198,7 @@ window.onload = function() {
     };
 
     var location = document.getElementById('location');
+    location.value = localStorage.getItem('location');
 
     location.onblur = function() {
         if (location.value.length <= 3 || !letterNumberSpaceValidation(location.value)) {
@@ -198,6 +221,7 @@ window.onload = function() {
     };
 
     var zipcode = document.getElementById('zipcode');
+    zipcode.value = localStorage.getItem('zip');
 
     zipcode.onblur = function() {
         if (zipcode.value.length < 4 || zipcode.value.length > 5 || isNaN(zipcode.value)) {
@@ -220,6 +244,7 @@ window.onload = function() {
     };
 
     var email = document.getElementById('email');
+    email.value = localStorage.getItem('email');
 
     email.onblur = function() {
         if (!email.value.match(emailExpression)) {
@@ -242,6 +267,7 @@ window.onload = function() {
     };
 
     var password = document.getElementById('password');
+    password.value = localStorage.getItem('password');
 
     password.onblur = function() {
         if (password.value.length < 8 || !letterNumberValidation(password.value)) {
@@ -309,7 +335,7 @@ window.onload = function() {
             alert('One or more inputs are empty');
         } else {
             var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup?name=' + firstName.value + 
-            "&lastName=" + lastName.value+ "&dni=" + dni.value + "&dob=" + newBirthday+ "&phone=" + phone.value + 
+            "&lastName=" + surname.value+ "&dni=" + dni.value + "&dob=" + newBirthday+ "&phone=" + phone.value + 
             "&address=" + address.value + "&city="+ location.value + "&zip=" + zipcode.value+ "&email=" + email.value + 
             "&password=" + password.value;
 
@@ -318,15 +344,22 @@ window.onload = function() {
                     return resp.json();
                 })
                 .then(function(dataJson){
-                    if (!dataJson.success){
-                        throw new Error('Error: ')
-                    }
                     alert(dataJson.msg + '\n' + 'Your first name is: ' + firstName.value + '\n' + 'Your surname is: ' 
-                    + surname.value + '\n' + 'Your dni is: ' + dni.value + '\n' + 'Your phone is: ' + phone.value 
-                    + '\n' + 'Your birthday is: ' + birthday.value + '\n' + 'Your address is: ' + address.value + 
-                    '\n' + 'Your location is: ' + location.value + '\n' + 'Your zipcode is: ' + zipcode.value + 
-                    '\n' + 'Your email is: ' + email.value + '\n' + 'Your password is: ' + password.value + 
-                    '\n' + 'Success: ' + dataJson.success);
+                    + surname.value + '\n' + 'Your dni is: ' + dni.value + '\n' + 'Your birthday is: ' + 
+                    birthday.value + '\n' +'Your phone is: ' + phone.value + '\n' + 'Your address is: ' + 
+                    address.value + '\n' + 'Your location is: ' + location.value + '\n' + 'Your zipcode is: ' + 
+                    zipcode.value + '\n' + 'Your email is: ' + email.value + '\n' + 'Your password is: ' + 
+                    password.value + '\n' + 'Success: ' + dataJson.success);
+                    localStorage.setItem('name', firstName.value);
+                    localStorage.setItem('surname', surname.value);
+                    localStorage.setItem('dni', dni.value);
+                    localStorage.setItem('birthday', newBirthday);
+                    localStorage.setItem('phone', phone.value);
+                    localStorage.setItem('address', address.value);
+                    localStorage.setItem('location', location.value);
+                    localStorage.setItem('zip', zipcode.value);
+                    localStorage.setItem('email', email.value);
+                    localStorage.setItem('password', password.value);
                 })
                 .catch(function(error){
                     alert(error)
