@@ -2,11 +2,21 @@ window.onload = function() {
     
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 
-    function letterNumberValidation (text) {
+    function letterValidation (text) {
+        text.toLowerCase()
         for (let i = 0; i < text.length; i++) {
-            if ((text.codePointAt(i) >= 48 && text.codePointAt(i) <= 57) 
-            || (text.codePointAt(i) >= 65 && text.codePointAt(i) <= 90) 
+            if ((text.codePointAt(i) >= 65 && text.codePointAt(i) <= 90) 
             || (text.codePointAt(i) >= 97 && text.codePointAt(i) <= 122)){
+            }else{
+                return false;
+            };
+        };
+        return true;
+    };
+
+    function numberValidation (text) {
+        for (let i = 0; i < text.length; i++) {
+            if ((text.codePointAt(i) >= 48 && text.codePointAt(i) <= 57)){
             }else{
                 return false;
             };
@@ -39,7 +49,7 @@ window.onload = function() {
     var password = document.getElementById('password');
 
     password.onblur = function() {
-        if(!letterNumberValidation(password.value) || password.value.length <= 3){
+        if(letterValidation(password.value) || numberValidation(password.value) || password.value.length <= 8){
             password.classList.add('borderRed');
             var passwordErrorMessage = document.createElement('p');
             passwordErrorMessage.classList.add('paragraphTwo');
@@ -63,35 +73,26 @@ window.onload = function() {
     loginButton.onclick = function(e) {
         e.preventDefault();
 
-        if(email.classList.contains('borderRed') && password.classList.contains('borderRed')) {
-            alert('Your email and password are not valids');
-        } else if (email.classList.contains('borderRed')) {
-            alert('Your email is not valid');
-        } else if (password.classList.contains('borderRed')) {
-            alert('Your password is not valid');  
-        } else if (email.value == '' && password.value == '') {
-            alert('Email and Password inputs are empty');
-        } else if (email.value == '') {
-            alert('Email input is empty');
-        } else if (password.value == '') {
-            alert('Password input is empty');
-        } else {
-            var url = 'https://basp-m2022-api-rest-server.herokuapp.com/login?email=' + email.value + 
-            '&password=' + password.value;
+        var url = 'https://basp-m2022-api-rest-server.herokuapp.com/login?email=' + email.value + 
+        '&password=' + password.value;
 
-            fetch(url)
-                .then(function(resp){
-                    return resp.json();
-                })
-                .then(function(dataJson){
-                    if (!dataJson.success){
-                        throw new Error(dataJson.msg + '\n' + 'Error: ' + dataJson.success)
-                    }
-                    alert(dataJson.msg + '\n' + 'Your mail is: ' + email.value + '\n' + 'Your password is: ' + password.value + '\n' + 'Success: ' + dataJson.success);
-                })
-                .catch(function(error){
-                    alert(error)
-                })
-        };
+        fetch(url)
+        .then(function(resp){
+            return resp.json();
+        })
+        .then(function(dataJson){
+            if (dataJson.success){
+                var dataJsonSuccess = [];
+                for (var keyData in dataJson.data) {
+                    dataJsonSuccess += ('\n' + keyData + ': ' + dataJson.data[keyData])
+                }
+                alert(dataJson.success + '\n' + dataJson.msg + dataJsonSuccess)
+            } else {
+                throw new Error (dataJson.msg + '\n' + 'Success: ' + dataJson.success);
+            };
+        })
+        .catch(function(error){
+            alert(error);
+        })
     };
 }

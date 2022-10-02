@@ -2,20 +2,16 @@ window.onload = function() {
 
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 
-    function letterValidation(text){
-        var itsLetter = true;
-        for (var i = 0; i < text.length; i++) {
-            var lowerCase = text[i].toLowerCase();
-            var upperCase = text[i].toUpperCase();
-            if (lowerCase == upperCase){
-                if (text[i] == " "){
-                    continue;
-                };
-                itsLetter = false;
-                break;
+    function letterValidation (text) {
+        text.toLowerCase()
+        for (let i = 0; i < text.length; i++) {
+            if ((text.codePointAt(i) >= 65 && text.codePointAt(i) <= 90) 
+            || (text.codePointAt(i) >= 97 && text.codePointAt(i) <= 122)){
+            }else{
+                return false;
             };
         };
-        return itsLetter;
+        return true;
     };
 
     function letterNumberValidation (text) {
@@ -23,6 +19,16 @@ window.onload = function() {
             if ((text.codePointAt(i) >= 48 && text.codePointAt(i) <= 57) 
             || (text.codePointAt(i) >= 65 && text.codePointAt(i) <= 90) 
             || (text.codePointAt(i) >= 97 && text.codePointAt(i) <= 122)){
+            }else{
+                return false;
+            };
+        };
+        return true;
+    };
+
+    function numberValidation (text) {
+        for (let i = 0; i < text.length; i++) {
+            if ((text.codePointAt(i) >= 48 && text.codePointAt(i) <= 57)){
             }else{
                 return false;
             };
@@ -113,21 +119,6 @@ window.onload = function() {
     };
 
     var birthday = document.getElementById('birthday');
-
-    function birthdayRework() {
-        var localStorageBirthday = localStorage.getItem('birthday');
-        var year = localStorageBirthday.substring(0, localStorageBirthday.indexOf('/'));
-        var month = localStorageBirthday.substring(localStorageBirthday.indexOf('/') + 1, 
-        localStorageBirthday.indexOf('/') + 3);
-        var day = localStorageBirthday.substring(localStorageBirthday.indexOf('/') + 4,  
-        localStorageBirthday.indexOf('/') + localStorageBirthday.length);
-        var birthdayArray = [day, year, month];
-        var newBirthday = birthdayArray.join('-');
-        return newBirthday;
-    }
-    
-    localStorage.setItem('birthday', birthdayRework());
-
     birthday.value = localStorage.getItem('birthday');
 
 
@@ -317,53 +308,49 @@ window.onload = function() {
         e.preventDefault();
 
         var year = birthday.value.substring(0, birthday.value.indexOf('-'));
-            var month = birthday.value.substring(birthday.value.indexOf('-') + 1, birthday.value.indexOf('-') + 3);
-            var day = birthday.value.substring(birthday.value.indexOf('-') + 4,  birthday.value.indexOf('-') 
-            + birthday.value.length);
-            var birthdayArray = [month, day, year];
-            var newBirthday = birthdayArray.join('/');
+        var month = birthday.value.substring(birthday.value.indexOf('-') + 1, birthday.value.indexOf('-') + 3);
+        var day = birthday.value.substring(birthday.value.indexOf('-') + 4,  birthday.value.indexOf('-') 
+        + birthday.value.length);
+        var birthdayArray = [month, day, year];
+        var newBirthday = birthdayArray.join('/');
 
-        if(firstName.classList.contains('borderRed') || surname.classList.contains('borderRed') || 
-        dni.classList.contains('borderRed') || phone.classList.contains('borderRed') || 
-        address.classList.contains('borderRed') || location.classList.contains('borderRed') || 
-        zipcode.classList.contains('borderRed') || email.classList.contains('borderRed') || 
-        password.classList.contains('borderRed') || repeatPassword.classList.contains('borderRed')) {
-            alert('One or more inputs are not valids');
-        } else if (firstName.value == '' || surname.value == '' || dni.value == '' || phone.value == '' || 
-        address.value == '' || location.value == '' || zipcode.value == '' || email.value == '' || 
-        password.value == '' || repeatPassword.value == '') {
-            alert('One or more inputs are empty');
-        } else {
-            var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup?name=' + firstName.value + 
-            "&lastName=" + surname.value+ "&dni=" + dni.value + "&dob=" + newBirthday+ "&phone=" + phone.value + 
-            "&address=" + address.value + "&city="+ location.value + "&zip=" + zipcode.value+ "&email=" + email.value + 
-            "&password=" + password.value;
+        var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup?name=' + firstName.value + 
+        "&lastName=" + surname.value+ "&dni=" + dni.value + "&dob=" + newBirthday + "&phone=" + phone.value + 
+        "&address=" + address.value + "&city="+ location.value + "&zip=" + zipcode.value+ "&email=" + email.value + 
+        "&password=" + password.value;
 
-            fetch(url)
-                .then(function(resp){
-                    return resp.json();
-                })
-                .then(function(dataJson){
-                    alert(dataJson.msg + '\n' + 'Your first name is: ' + firstName.value + '\n' + 'Your surname is: ' 
-                    + surname.value + '\n' + 'Your dni is: ' + dni.value + '\n' + 'Your birthday is: ' + 
-                    birthday.value + '\n' +'Your phone is: ' + phone.value + '\n' + 'Your address is: ' + 
-                    address.value + '\n' + 'Your location is: ' + location.value + '\n' + 'Your zipcode is: ' + 
-                    zipcode.value + '\n' + 'Your email is: ' + email.value + '\n' + 'Your password is: ' + 
-                    password.value + '\n' + 'Success: ' + dataJson.success);
-                    localStorage.setItem('name', firstName.value);
-                    localStorage.setItem('surname', surname.value);
-                    localStorage.setItem('dni', dni.value);
-                    localStorage.setItem('birthday', newBirthday);
-                    localStorage.setItem('phone', phone.value);
-                    localStorage.setItem('address', address.value);
-                    localStorage.setItem('location', location.value);
-                    localStorage.setItem('zip', zipcode.value);
-                    localStorage.setItem('email', email.value);
-                    localStorage.setItem('password', password.value);
-                })
-                .catch(function(error){
-                    alert(error)
-                })
-        };
+        fetch(url)
+        .then(function(resp){
+            return resp.json();
+        })
+        .then(function(dataJson){
+            if (dataJson.success){
+                var dataJsonSuccess = [];
+                for (var keyData in dataJson.data) {
+                    dataJsonSuccess += ('\n' + keyData + ': ' + dataJson.data[keyData])
+                }
+                alert('Success: ' + dataJson.success + '\n' + dataJson.msg + dataJsonSuccess)
+                localStorage.setItem('name', firstName.value);
+                localStorage.setItem('surname', surname.value);
+                localStorage.setItem('dni', dni.value);
+                localStorage.setItem('birthday', birthday.value);
+                localStorage.setItem('phone', phone.value);
+                localStorage.setItem('address', address.value);
+                localStorage.setItem('location', location.value);
+                localStorage.setItem('zip', zipcode.value);
+                localStorage.setItem('email', email.value);
+                localStorage.setItem('password', password.value);
+            } else {
+                var dataJsonErrors = dataJson.errors;
+                var errorsArray = [];
+                for (var i = 0; i < dataJsonErrors.length; i++) {
+                    errorsArray += '\n' + dataJsonErrors[i].msg;
+                };
+                throw new Error (errorsArray);
+            };
+        })
+        .catch(function(error){
+            alert(error);
+        })
     };
-}
+};
