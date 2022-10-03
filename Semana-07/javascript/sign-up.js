@@ -14,18 +14,6 @@ window.onload = function() {
         return true;
     };
 
-    function letterNumberValidation (text) {
-        for (let i = 0; i < text.length; i++) {
-            if ((text.codePointAt(i) >= 48 && text.codePointAt(i) <= 57) 
-            || (text.codePointAt(i) >= 65 && text.codePointAt(i) <= 90) 
-            || (text.codePointAt(i) >= 97 && text.codePointAt(i) <= 122)){
-            }else{
-                return false;
-            };
-        };
-        return true;
-    };
-
     function numberValidation (text) {
         for (let i = 0; i < text.length; i++) {
             if ((text.codePointAt(i) >= 48 && text.codePointAt(i) <= 57)){
@@ -261,7 +249,7 @@ window.onload = function() {
     password.value = localStorage.getItem('password');
 
     password.onblur = function() {
-        if (password.value.length < 8 || !letterNumberValidation(password.value)) {
+        if (letterValidation(password.value) || numberValidation(password.value) || password.value.length < 8) {
             password.classList.add('borderRed');
             var passwordErrorMessage = document.createElement('p');
             passwordErrorMessage.classList.add('paragraphNine');
@@ -303,6 +291,8 @@ window.onload = function() {
     };
 
     var createButton = document.getElementById('createButton');
+    var modal = document.getElementById('modalContainer');
+    var closeButton = document.getElementById('closeButton');
 
     createButton.onclick = function(e) {
         e.preventDefault();
@@ -329,7 +319,16 @@ window.onload = function() {
                 for (var keyData in dataJson.data) {
                     dataJsonSuccess += ('\n' + keyData + ': ' + dataJson.data[keyData])
                 }
-                alert('Success: ' + dataJson.success + '\n' + dataJson.msg + dataJsonSuccess)
+                modal.style.display = 'block'
+                var successPar = document.createElement('p');
+                successPar.innerText = 'Success: ' + dataJson.success + '\n' + dataJson.msg + dataJsonSuccess;
+                closeButton.parentNode.insertBefore(successPar, closeButton.previousSibling);
+    
+                window.onclick = function(event){
+                    if (event.target !== modal) {
+                        modal.remove();
+                    };
+                };
                 localStorage.setItem('name', firstName.value);
                 localStorage.setItem('surname', surname.value);
                 localStorage.setItem('dni', dni.value);
@@ -350,7 +349,16 @@ window.onload = function() {
             };
         })
         .catch(function(error){
-            alert(error);
+            modal.style.display = 'block'
+            var errorPar = document.createElement('p');
+            errorPar.innerText = error
+            closeButton.parentNode.insertBefore(errorPar, closeButton.previousSibling);
+    
+            window.onclick = function(event){
+                if (event.target !== modal) {
+                    modal.remove();
+                };
+            };
         })
     };
 };

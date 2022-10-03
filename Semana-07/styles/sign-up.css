@@ -13,7 +13,7 @@ main{
     flex-direction: column;
     align-items: center;
     width: 80%;
-    height: 600px;
+    height: 650px;
     margin-top: 30px;
     margin-bottom: 30px;
     background-color: #f4f4f4;
@@ -51,6 +51,9 @@ main{
 .inputs input{
     height: 30px;
 }
+.goToLogIn{
+    font-size: 0.8rem;
+}
 .login button{
     margin-bottom: 10px;
     margin-top: 20px;
@@ -62,7 +65,23 @@ main{
     font-size: 16px;
     background-color: #4CAF50;
     color: white;
-
+}
+.modalContainer{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+}
+.modal{
+    background-color: #f3f3f3;
+    width: 60%;
+    margin-bottom: 300px;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 .borderGreen{
     border: 2px solid green;
@@ -77,6 +96,9 @@ main{
         margin-left: min(30%, 320px);
         width: max(70%, (100% - 320px) );
         height: 700px;
+    }
+    .modal{
+        width: 400px;
     }
 }
 

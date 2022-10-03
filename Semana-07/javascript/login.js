@@ -49,7 +49,7 @@ window.onload = function() {
     var password = document.getElementById('password');
 
     password.onblur = function() {
-        if(letterValidation(password.value) || numberValidation(password.value) || password.value.length <= 8){
+        if(letterValidation(password.value) || numberValidation(password.value) || password.value.length < 8){
             password.classList.add('borderRed');
             var passwordErrorMessage = document.createElement('p');
             passwordErrorMessage.classList.add('paragraphTwo');
@@ -69,13 +69,15 @@ window.onload = function() {
     };
 
     var loginButton = document.getElementById('loginButton');
-
+    var modal = document.getElementById('modalContainer');
+    var closeButton = document.getElementById('closeButton');
+    
     loginButton.onclick = function(e) {
         e.preventDefault();
-
+    
         var url = 'https://basp-m2022-api-rest-server.herokuapp.com/login?email=' + email.value + 
         '&password=' + password.value;
-
+    
         fetch(url)
         .then(function(resp){
             return resp.json();
@@ -85,14 +87,39 @@ window.onload = function() {
                 var dataJsonSuccess = [];
                 for (var keyData in dataJson.data) {
                     dataJsonSuccess += ('\n' + keyData + ': ' + dataJson.data[keyData])
-                }
-                alert(dataJson.success + '\n' + dataJson.msg + dataJsonSuccess)
+                };
+    
+                modal.style.display = 'block'
+                var successPar = document.createElement('p');
+                successPar.innerText = 'Success: ' + dataJson.success + '\n' + 'Email: ' + email.value + '\n' + 
+                'Password: ' + password.value + '\n' + dataJson.msg + dataJsonSuccess;
+                closeButton.parentNode.insertBefore(successPar, closeButton.previousSibling);
+    
+                window.onclick = function(event){
+                    if (event.target !== modal) {
+                        modal.remove();
+                    };
+                };
             } else {
-                throw new Error (dataJson.msg + '\n' + 'Success: ' + dataJson.success);
+                var dataJsonErrors = dataJson.errors;
+                var errorsArray = [];
+                for (var i = 0; i < dataJsonErrors.length; i++) {
+                    errorsArray += '\n' + dataJsonErrors[i].msg;
+                };
+                throw new Error (errorsArray);
             };
         })
         .catch(function(error){
-            alert(error);
+            modal.style.display = 'block'
+            var errorPar = document.createElement('p');
+            errorPar.innerText = error
+            closeButton.parentNode.insertBefore(errorPar, closeButton.previousSibling);
+    
+            window.onclick = function(event){
+                if (event.target !== modal) {
+                    modal.remove();
+                };
+            };
         })
     };
 }

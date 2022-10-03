@@ -54,3 +54,9 @@ Github repository: https://pabloschivazappa.github.io/BaSP-A2022-Etapa-1/Semana-
 This week we did sign in and login pages and we implement Javascript on this pages to validate the inputs of the forms.
 
 Github repository: https://pabloschivazappa.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html
+
+### Week 07 - Fetch and local storage
+
+This week we start to work with fetch, and save our inputs in the local storage.
+
+Github repository: https://pabloschivazappa.github.io/BaSP-A2022-Etapa-1/Semana-07/views/index.html
