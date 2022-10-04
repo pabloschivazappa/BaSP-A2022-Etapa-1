@@ -319,7 +319,7 @@ window.onload = function() {
                 for (var keyData in dataJson.data) {
                     dataJsonSuccess += ('\n' + keyData + ': ' + dataJson.data[keyData])
                 }
-                modal.style.display = 'block'
+                modal.style.display = 'flex'
                 var successPar = document.createElement('p');
                 successPar.innerText = 'Success: ' + dataJson.success + '\n' + dataJson.msg + dataJsonSuccess;
                 closeButton.parentNode.insertBefore(successPar, closeButton.previousSibling);
@@ -349,7 +349,7 @@ window.onload = function() {
             };
         })
         .catch(function(error){
-            modal.style.display = 'block'
+            modal.style.display = 'flex'
             var errorPar = document.createElement('p');
             errorPar.innerText = error
             closeButton.parentNode.insertBefore(errorPar, closeButton.previousSibling);

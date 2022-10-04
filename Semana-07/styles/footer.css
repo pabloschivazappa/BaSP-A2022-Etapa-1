@@ -1,7 +1,7 @@
 footer{
     display: flex;
     flex-direction: column;
-    margin-top: 150px;
+    margin-top: 200px;
 }
 footer ul form{
     display: flex;
@@ -23,5 +23,11 @@ footer p{
 @media (min-width: 768px){
     footer{
       margin-left: min(30%, 320px);
+    }
+}
+
+@media (min-width: 1200px){
+    footer{
+        margin-top: 0;
     }
 }
