@@ -101,12 +101,16 @@ window.onload = function() {
                     };
                 };
             } else {
+                if (email.classList.contains('borderGreen') && password.classList.contains('borderGreen')){
+                    throw new Error (dataJson.msg)
+                } else {
                 var dataJsonErrors = dataJson.errors;
                 var errorsArray = [];
                 for (var i = 0; i < dataJsonErrors.length; i++) {
                     errorsArray += '\n' + dataJsonErrors[i].msg;
                 };
                 throw new Error (errorsArray);
+                };
             };
         })
         .catch(function(error){
@@ -122,4 +126,4 @@ window.onload = function() {
             };
         })
     };
-}
+};
